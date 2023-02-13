@@ -143,27 +143,24 @@ public class StepDef_SC89947 extends CucumberGenericTest{
 		loginPageObj.LoginintoApplication();
 
 	}
-
-	@When("^User enters the Pega credentials89924$")
-	public void user_enters_the_Pega_credentials_and_click_on_login_Button()  {
+	@When("^user enters the Pega Credentials$")
+	public void user_enters_the_pega_credentials_and_click_on_login_Button()  {
 		loginPageObj.LoginWithDevStudio();
 
 	}
-
-
 
 
 	@When("^Select who Referred Them as \"([^\"]*)\"$")
 	public void select_who_Referred_Them_as(String arg1) throws Throwable {
 		CaptureReferralPage captureReferralPage = new CaptureReferralPage();
 		captureReferralPage.enterAndSelectValueFromWhoReferredThem(arg1);
-
+		captureReferralPage.getContinueButton();
 	}
-
 	@When("^Select Referral Route as \"([^\"]*)\"$")
 	public void select_Referral_Route_as(String arg1) throws Throwable {
 		CaptureReferralPage captureReferralPage = new CaptureReferralPage();
 		captureReferralPage.ClickReferralRouteDirectButton();
+
 	}
 
 	@And("Fill the Client details")

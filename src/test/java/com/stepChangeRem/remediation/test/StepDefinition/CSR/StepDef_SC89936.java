@@ -323,17 +323,6 @@ import java.util.List;
 
 		}
 
-		@And("user Navigates to Future Changes Page and clicks on checkbox and Continue Button")
-		public void user_Navigates_to_Future_Changes_Page_and_clicks_on_checkbox_and_Continue_Button() throws InterruptedException {
-			Thread.sleep(4000);
-			yourDashBordPageObj.checkBoxForAllCaptured();
-			Thread.sleep(4000);
-			finalQuestionFutureChange.ClickFutureChangesPageContinueButton89930();
-
-		}
-
-
-
 		@And("User Clicks On A Case And Navigates to Flexible Spendings")
 		public void userClicksOnACaseAndNavigatesToFlexibleSpendings() {
 			Homepage page=new Homepage();
@@ -348,7 +337,7 @@ import java.util.List;
 			finalQuestionPage.FinalQuestionsFillAsset89934();
 			finalQuestionFutureChange.FutureChangesContinueGuestUser();
 			finalQuestionMainPage.clickNoForAllFinalQuestions();
-			finalQuestionMainPage.getWhatTypesofJobsCouldbeAffectedYesButtonClient1().click();
+			//finalQuestionMainPage.getWhatTypesofJobsCouldbeAffectedYesButtonClient1().click();
 			finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();//11
 		}
 
@@ -359,9 +348,17 @@ import java.util.List;
 
 
 		@And("Navigate to the Your Spendings Fixed page and enter the data as DataTable and Assert Total Fixed Spendings as \"([^\"]*)\"$")
-		public void navigateToTheYourSpendingsFixedPageAndEnterTheDataAsDataTableAndAssertTotalFixedSpendingsAs(String totalFixedSpendings,DataTable values) throws InterruptedException {
+		public void
+		navigateToTheYourSpendingsFixedPageAndEnterTheDataAsDataTableAndAssertTotalFixedSpendingsAs(String totalFixedSpendings,DataTable values) {
 			List<SpendingsFields> incomeFieldsList = new ArrayList<SpendingsFields>(values.asList(SpendingsFields.class));
 			yourIncomePageHelperObj.addSpendingDetails(incomeFieldsList,totalFixedSpendings);
+		}
+
+
+		@And("Navigate to the Your Spendings Fixed pageR and enter the data as DataTable and Assert Total Fixed Spendings as \"([^\"]*)\"$")
+		public void navigateToTheYourSpendingsFixedPageRAndEnterTheDataAsDataTableAndAssertTotalFixedSpendingsAs(String totalFixedSpendings,DataTable values) {
+			List<SpendingsFields> incomeFieldsList = new ArrayList<SpendingsFields>(values.asList(SpendingsFields.class));
+			yourIncomePageHelperObj.addSpendingDetailsR(incomeFieldsList,totalFixedSpendings);
 		}
 
         @And("Navigate to the Your Spendings Flexible page and enter the data as DataTable and Assert The totatl Spedings As \"([^\"]*)\"$")
@@ -381,7 +378,8 @@ import java.util.List;
 
 
 		@Then("^User fills the Debt Details for Client and assert Total Amount \"([^\"]*)\" after Navigating Back After completing (\\d+)$")
-        public void userFillsTheDebtDetailsForClientAndAssertTotalAmountAfterNavigatingBackAfterCompleting(String amount, int alreadyCompletedDebts,DataTable values) throws InterruptedException {
+        public void
+		userFillsTheDebtDetailsForClientAndAssertTotalAmountAfterNavigatingBackAfterCompleting(String amount, int alreadyCompletedDebts,DataTable values) {
             List<DebtsFields> debtDetails = new ArrayList<DebtsFields>(values.asList(DebtsFields.class));
             yourDebtsHelper.navigatedBackAndCompleteTheDebtDetails(debtDetails,amount,alreadyCompletedDebts);
         }

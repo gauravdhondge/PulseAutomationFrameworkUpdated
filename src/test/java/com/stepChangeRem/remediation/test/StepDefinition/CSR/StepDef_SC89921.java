@@ -238,9 +238,9 @@ public class StepDef_SC89921 extends CucumberGenericTest{
 	@And("User Ends the session and Logout from the Application")
 	public void userEndsTheSessionAndLogoutFromTheApplication() {
 		homePageObj.getEndSession().click();
-		homePageObj.getEndSessionConfirm().click();
-		homePageObj.getClickOnAvatar().click();
-		homePageObj.getLogout().click();
+//		homePageObj.getEndSessionConfirm().click();
+//		homePageObj.getClickOnAvatar().click();
+//		homePageObj.getLogout().click();
 
 	}
 
