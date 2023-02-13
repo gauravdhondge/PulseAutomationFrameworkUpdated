@@ -3,8 +3,9 @@ Feature: Validation of E2E scenario 89933
   @CSR_BatchE2E_All_Scenario
   @CSR_BatchE2E_SET_01
   Scenario: E2E - Sole Client - Financial Solutions - Registration - Linking - England - End Session ESC0003
-    Given User is in login page
-    When User enters the credentials and click on login Button
+#    Given User is in login page
+    When user enters the Pega Credentials
+#    When User enters the credentials and click on login Button
     And Click On New Button
     And Select PhoneCall Option
     And Create new debt Advice case
@@ -34,10 +35,10 @@ Feature: Validation of E2E scenario 89933
     And Navigate to the Your Spendings Fixed page and enter the data as DataTable and Assert Total Fixed Spendings as "886.03"
       | field                             | amount    |      index  |   arrears   |
       | Council tax                       | 100       |        4    |     No      |
-      | TV licence                        | 13.12     |        3        |     No      |
+      | TV licence                        | 13.12     |        3    |     No      |
       | Electricity                       | 50        |        4    |     No      |
       | Gas                               | 50        |        4    |     No      |
-      | Water supply                      | 50        |        4    |     No      |
+      | Water supply                      | 50        |        4    |     false     |
       | Buildings and contents insurance  | 20        |        4    |     No      |
     And User clicks on continue The screen
     And Navigate to the Your Spendings Flexible page and enter the data as DataTable and Assert The totatl Spedings As "1246.03"
@@ -47,7 +48,7 @@ Feature: Validation of E2E scenario 89933
     Then User is navigated to Advice your budget to review budget
     And User clicks on continue The screen
     And User clicks on continue The screen
-    Then User Navigates to Final Questions Page
+    Then User Naigates to Final Questions Page
     Then User Navigates to Asset Page And performs the below Opertations
     |field    |mainHomeAmount|mainHomeOwner|isAllClientAssetsCaptured|isMainHome|
     |Main home|100000        |Client1      |true                     |true      |

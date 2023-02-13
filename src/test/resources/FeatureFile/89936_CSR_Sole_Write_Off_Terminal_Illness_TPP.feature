@@ -3,8 +3,9 @@ Feature: Validation of E2E scenario 89936
   @CSR_BatchE2E_All_Scenario
   @CSR_BatchE2E_SET_03
   Scenario: Validation of E2E scenario 89936
-    Given User is in login page
-    When User enters the credentials and click on login Button
+#    Given User is in login page
+    When user enters the Pega Credentials
+#    When User enters the credentials and click on login Button
 #    And User Clicks On A Case And Navigates to Flexible Spendings
     And Click On New Button
     And Select PhoneCall Option
@@ -39,7 +40,7 @@ Feature: Validation of E2E scenario 89936
       | TV licence                      | 13.12     |        3    |     No      |
       | Electricity                     | 100       |        4    |     No      |
       | Gas                             | 100       |        4    |     No      |
-      | Water supply                    | 100       |        4    |     No      |
+      | Water supply                    | 100       |        4    |    false     |
       | Buildings and contents insurance| 80        |        4    |     No      |
       | Childcare                       | 272.91    |        4    |     No      |
       | School uniform                  | 20        |        4    |     false   |

@@ -3,8 +3,9 @@ Feature:Validation of E2E scenario 89934
   @CSR_BatchE2E_All_Scenario
   @CSR_BatchE2E_SET_01
   Scenario: E2E Sole IVA NI Groceries multiple frequencies
-    Given User is in login page
-    When User enters the credentials and click on login Button
+    #Given User is in login page
+      When user enters the Pega Credentials
+   # When User enters the credentials and click on login Button
     And Click On New Button
     And Select PhoneCall Option
     And Create new debt Advice case
@@ -29,7 +30,7 @@ Feature:Validation of E2E scenario 89934
     And Add no 'Assets' or 'Future Changes89934'
     And Navigate to the'Final Questions' and select <No> for all questions
     And Navigate to Priority Arrears and select 'Calculate' where required
-    And Navigate to Savings and select <No>
+    #And Navigate to Savings and select <No>
     And Navigate to 'Your debt advice'
     And Navigate to 'Your preferred solution' and proceed with the solution as per test case
     And Perform Logout And Close Browser

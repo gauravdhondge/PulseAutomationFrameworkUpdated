@@ -3,9 +3,11 @@ Feature: Validation of E2E scenario 89921
   @CSR_BatchE2E_All_Scenario
   @CSR_BatchE2E_SET_01
   Scenario: Validation of E2E scenario 89921
-    Given User is in login page
-    #And User Clicks On SIT Pulse Button
-    When User enters the credentials and click on login Button
+  #  Given User is in login page
+  #  And User Clicks On SIT Pulse Button
+    When user enters the Pega Credentials
+   # When User enters the credentials and
+     # click on login Button
     And Click On New Button
     And Select PhoneCall Option
     And Create new debt Advice case
@@ -35,10 +37,10 @@ Feature: Validation of E2E scenario 89921
       | Rent                            | 1000      |        4    |     No      |
       | Rates                           | 150       |        4    |     No      |
       | TV licence                      | 13        |        3    |     No      |
+      | Buildings and contents insurance| 25        |        4    |     No      |
       | Electricity                     | 30        |        4    |     No      |
       | Gas                             | 30        |        4    |     No      |
-      | Dual fuel                       | 30        |        4    |     No      |
-      | Buildings and contents insurance| 25        |        4    |     No      |
+      | Water supply                    | 30        |        4    |     false     |
     And User clicks on continue The screen
     And User Navigates Back
     And User Navigates Back
@@ -48,8 +50,6 @@ Feature: Validation of E2E scenario 89921
     Then User fills the Debt Details for Client and assert Total Amount "18000" after Navigating Back After completing 2
       | creditor            | debttype             |      amountOwed  | liability |  areYouBehindWithPayments |furtherAction |furtherActionType                 |ongoingMobileService          |arrangementRepayInsurance|
       | Lowell              | Mobile phone arrears |      7200        | 1         |  No                       |      false   |No action taken (arrears only)    |No                            |No                       |
-   #  | Lowell             | Insurance arrears    |      1800        | 1         |  false                    |      false   |No action taken (arrears only)    |false                         |No                       |
-      | Barclaycard         | Credit card          |      1800        | 1         |  No                       |      No      |false                             |false                         |false                    |
     And user selects options from Global Questions as "No"
     And User clicks on continue The screen
     And User Clicks On Your Spendings in DashBoard
@@ -57,7 +57,7 @@ Feature: Validation of E2E scenario 89921
     And Navigate to the Your Spendings Flexible page and enter the data as DataTable and Assert The totatl Spedings As "1500.00"
       | field                           | amount    |      index  |   arrears      |
       | Groceries                       | 222       |        5    |     false      |
-#     | Clothing and footwear           | 60        |        4    |     false      |
+      | Clothing and footwear           | 60        |        4    |     false      |
     And User clicks on continue The screen
     Then User is navigated to Advice your budget to review budget
     And User navigates to Assets page in debt advice of final questions

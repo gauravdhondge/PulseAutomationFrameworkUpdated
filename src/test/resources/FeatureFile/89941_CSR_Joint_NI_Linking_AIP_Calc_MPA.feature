@@ -4,10 +4,11 @@ Feature: Validation of E2E scenario 89941
   @CSR_BatchE2E_SET_01
   @CSR_Batch40/41
   Scenario: Validate HomePage Functionality_SC89941
-    Given User is in login page
-    When User enters the credentials and click on login Button
- #   And Click On New Button
- #   And Select PhoneCall Option
+    #Given User is in login page
+    When user enters the Pega Credentials
+   # When User enters the credentials and click on login Button
+    And Click On New Button
+    And Select PhoneCall Option
     And Create new debt Advice case
     And Select Referral Route as "Direct"
     And Select who Referred Them as "Other"
