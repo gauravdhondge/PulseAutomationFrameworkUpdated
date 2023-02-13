@@ -264,10 +264,9 @@ public class StepDef_SC89940 extends CucumberGenericTest {
 		 * yourSpendingFixedPage.ClickContinueButtonYourSpendingFixedCast();
 		 */
 
-		genericMethodsCvp.implicitWait(6000);
+		genericMethodsCvp.implicitWait(10000);
 		yourIncomePageObj.switchToActiveFrame();
-		genericMethodsCvp.implicitWait(6000);
-//		(new WebDriverWait(getDriver(),30)).until(ExpectedConditions.elementToBeClickable(yourIncomePageObj.getYourSpendinglink().getSelector()));
+		(new WebDriverWait(getDriver(),30)).until(ExpectedConditions.elementToBeClickable(yourIncomePageObj.getYourSpendinglink().getSelector()));
 		yourIncomePageObj.ClickYourSpendingLink();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourSpendingFixedCost.enterSpendingDetailsFor89940();
@@ -286,30 +285,29 @@ public class StepDef_SC89940 extends CucumberGenericTest {
 	@Then("^User Naviagated to Income page from top Navigation and fill required fields$")
 	public void user_Naviagated_to_Income_page_from_top_Navigation_and_fill_required_fields() {
 		getBrowser().sleep(6000);
-//		yourSpendingFixedPage.ClickContinueButtonYourSpendingFixedCast();
-//		getBrowser().sleep(10000);
-		genericMethodsCvp.implicitWait(6000);
+		yourSpendingFixedPage.ClickContinueButtonYourSpendingFixedCast();
+		getBrowser().sleep(10000);
+		genericMethodsCvp.implicitWait(10000);
 		yourIncomePageObj.switchToActiveFrame();
-//		(new WebDriverWait(getDriver(),30)).until(ExpectedConditions.elementToBeClickable(yourSpendingFlexiblePage.getYourIncomelink().getSelector()));
+		(new WebDriverWait(getDriver(),30)).until(ExpectedConditions.elementToBeClickable(yourSpendingFlexiblePage.getYourIncomelink().getSelector()));
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourSpendingFlexiblePage.clickYourIncomelink();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		getBrowser().sleep(10000);
 		yourIncomePageObj.clickWagesremoveButton();
-		genericMethodsCvp.implicitWait(5000);
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 //		yourIncomePageObj.clickChildTaxCreditremoveButton();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-//		yourIncomePageObj.clickWorkingtaxCreditremoveButton();
-//		genericMethodsCvp.implicitWait(5000);
-//		getBrowser().sleep(getBrowser().getTimeout() / 10);
+		yourIncomePageObj.clickWorkingtaxCreditremoveButton();
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.clickUniversalCreditremoveButton();
-		genericMethodsCvp.implicitWait(5000);
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.getJSIncomeBasedRemove().click();
-		genericMethodsCvp.implicitWait(5000);
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.clickOnOtherEarnings();
-		genericMethodsCvp.implicitWait(5000);
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.EnterOtherearnings("20");
-		genericMethodsCvp.implicitWait(5000);
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.getOtherEarningDropdown().selectFromDropdownByIndex(2);
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.getOtherEarningOwnerDropdown().selectFromDropdownByIndex(2);
@@ -338,13 +336,13 @@ public class StepDef_SC89940 extends CucumberGenericTest {
 		//yourIncomePageObj.removeUnwantedOptionsFromIncomePage();
 		yourIncomePageObj.ClickgetAllincomeChekcbox();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-//		yourIncomePageObj.ClickgetAllincomeChekcbox();
+		yourIncomePageObj.ClickgetAllincomeChekcbox();
 		//workaround code completed
-//		getBrowser().sleep(getBrowser().getTimeout() / 10);
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.clickOnOYesforAreYouHappythatsClientQuestions();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-//		yourIncomePageObj.ClickgetAllincomeChekcbox();
-//		getBrowser().sleep(getBrowser().getTimeout() / 10);
+		yourIncomePageObj.ClickgetAllincomeChekcbox();
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		yourIncomePageObj.ClickYourIncomePageContinueButton();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 
@@ -396,8 +394,7 @@ public class StepDef_SC89940 extends CucumberGenericTest {
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		finalQuestionFutureChange.ClickAllChangeshavebeenapturedCheckBox();//11
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		finalQuestionFutureChange.ClickFutureChangesPageContinueButton89940();
-		getBrowser().sleep(getBrowser().getTimeout() / 10);
+		finalQuestionFutureChange.ClickFutureChangesPageContinueButton();
 		finalQuestionMainPage.selectNoForAllQuestion();//
 		finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();//11
 	}
@@ -413,28 +410,18 @@ public class StepDef_SC89940 extends CucumberGenericTest {
 		finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();//11
 
 	}
-//	@Then("^User Perform Action on Final Question page Without Assets89930$")
-//	public void user_Perform_Action_on_Final_Question_page_without_assets89930() {
-//		yourDashBordPageObj.ClickOnFinalQuestionstButton();
-//		finalQuestionPage.FinalQuestionsFillAsset89934();
-//		//getBrowser().sleep(getBrowser().getTimeout() / 10);
-//		finalQuestionFutureChange.ClickFutureChangesPageContinueButton89941();
-//		//here need to enter for debug-----------
-//		finalQuestionMainPage.clickNoForAllFinalQuestions();//
-//		finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();//11
-//
-//	}
 	@Then("^User Perform Action on Final Question page Without Assets89930$")
 	public void user_Perform_Action_on_Final_Question_page_without_assets89930() {
-//		yourDashBordPageObj.ClickOnFinalQuestionstButton();
-//		finalQuestionPage.FinalQuestionsFillAsset89934();
-		getBrowser().sleep(getBrowser().getTimeout() / 10);
-//		finalQuestionFutureChange.ClickFutureChangesPageContinueButton89941();
+		//yourDashBordPageObj.ClickOnFinalQuestionstButton();
+		finalQuestionPage.FinalQuestionsFillAsset89934();
+		//getBrowser().sleep(getBrowser().getTimeout() / 10);
+		finalQuestionFutureChange.ClickFutureChangesPageContinueButton89941();
 		//here need to enter for debug-----------
 		finalQuestionMainPage.clickNoForAllFinalQuestions();//
 		finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();//11
 
 	}
+
 
 	@Then("^User perform Action on Your Priority payments page$")
 	public void user_perform_Action_on_Your_Priority_payments_page() {
@@ -454,8 +441,8 @@ public class StepDef_SC89940 extends CucumberGenericTest {
 		//(new WebDriverWait(getDriver(),30)).until(ExpectedConditions.textToBePresentInElementValue(By.xpath("//span[text()='Debt management plan'])[1]"), "Debt management plan"));
 		//ReviewYourOptionObj.VerifyCurrentScenarioPlan_89940();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-//		ReviewYourOptionObj.getBackTodashboard().click();
-//		getBrowser().sleep(getBrowser().getTimeout() / 10);
+		ReviewYourOptionObj.getBackTodashboard().click();
+		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		/*ReviewYourOptionObj.getThreedots().click();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		ReviewYourOptionObj.getNonProceedButton().click();*/

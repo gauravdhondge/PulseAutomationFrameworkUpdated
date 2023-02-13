@@ -184,7 +184,7 @@ public class StepDef_SC89929 extends CucumberGenericTest{
 		public void User_is_navigated_to_Advice_your_budget_to_review_budget()
 		{
 			yourDashBordPageObj.ClickOnAdviceOnYourBudgetButton();
-			YourBudgetSummaryReviewPage.ClickContinueOnBudgetSummarypage89930();
+
 		}
 	@Then("^User is navigated to Advice your budget to review budget89931$")
 	public void User_is_navigated_to_Advice_your_budget_to_review_budget89931()
@@ -272,7 +272,7 @@ public class StepDef_SC89929 extends CucumberGenericTest{
 	}
 
 	@Then("^Admin logs in reviews all pages of case by clientOne id$")
-	public void admin_logs_in_reviews_all_pages_of_case_by_clientOne_id() throws InterruptedException {
+	public void admin_logs_in_reviews_all_pages_of_case_by_clientOne_id(){
 		homePageObj.clickPhoneCallOptionFromhomePage();
 		clientSearchPage.verifyTheSoleClientCase();
 
@@ -313,21 +313,14 @@ public class StepDef_SC89929 extends CucumberGenericTest{
 
 
 	@And("User Perform Action on Final Question pages and devide main Home as \"([^\"]*)\" into equal portion of \"([^\"]*)\"$")
-	public void userPerformActionOnFinalQuestionPagesAndDevideMainHomeAsIntoEqualPortionOf(String totalWorth, String share) throws InterruptedException {
-		Thread.sleep(4000);
+	public void userPerformActionOnFinalQuestionPagesAndDevideMainHomeAsIntoEqualPortionOf(String totalWorth, String share) {
 		yourDashBordPageObj.ClickOnFinalQuestionstButton();
-		Thread.sleep(4000);
 		finalQuestionMainPage.devideAssetIntoEqualPortion(totalWorth,share);
-		Thread.sleep(4000);
 //		yourDashBordPageObj.assetInputCompleteCheckbox();
 		finalQuestionMainPage.clickContinueButton();
-		Thread.sleep(4000);
 		yourDashBordPageObj.checkBoxForAllCaptured();
-		Thread.sleep(4000);
 		finalQuestionFutureChange.ClickFutureChangesPageContinueButton();
-		Thread.sleep(4000);
 		finalQuestionMainPage.clickNoForAllFinalQuestions();
-		Thread.sleep(4000);
 		finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();//11
 	}
 
@@ -340,28 +333,6 @@ public class StepDef_SC89929 extends CucumberGenericTest{
 		ReviewYourOptionObj.getDMPCheckBox().click();
 		ReviewYourOptionObj.clickOnContinueButtonYourRecommondedSolutionButton();
 	}
-
-	@And("^User Navigates to Review Your Options Page and Selects DMP as recommended solution89929$")
-	public void userNavigatesToReviewYourOptionsPageAndSelectsMPAAsRecommendedSolution89929() {
-		yourDashBordPageObj.ClickOnReviewYourOptionsButton();
-		OurAdvicePrinciplespage.getContinueButton().click();
-		ReviewYourOptionObj.getDMPCheckbox89929().click();
-		ReviewYourOptionObj.getFindOut89929().click();
-		ReviewYourOptionObj.getReturnToDebtSolutionsBtn().click();
-		ReviewYourOptionObj.clickOnContinueButtonYourRecommondedSolutionButton();
-	}
-
-	@And("^User Navigates to Review Your Options Page and Selects DMP as recommended solution89940$")
-	public void userNavigatesToReviewYourOptionsPageAndSelectsMPAAsRecommendedSolution89940() {
-		yourDashBordPageObj.ClickOnReviewYourOptionsButton();
-		OurAdvicePrinciplespage.getContinueButton().click();
-		ReviewYourOptionObj.getDMPCheckbox89929().click();
-		ReviewYourOptionObj.getFindOut89929().click();
-		ReviewYourOptionObj.getReturnToDebtSolutionsBtn().click();
-		ReviewYourOptionObj.clickOnContinueButtonYourRecommondedSolutionButton();
-	}
-
-
 }
 
 
