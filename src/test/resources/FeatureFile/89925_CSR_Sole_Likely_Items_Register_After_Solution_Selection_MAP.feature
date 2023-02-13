@@ -3,8 +3,10 @@ Feature: Validation of E2E scenario 89925
     @CSR_BatchE2E_All_Scenario
     @CSR_BatchE2E_SET_02
   Scenario Outline: Validation of E2E scenario 89925
-    Given User is in login page
-    When User enters the credentials and click on login Button
+    #Given User is in login page
+    When user enters the Pega Credentials
+   # When User enters the credentials and click on login Button
+
 #    And User Clicks On A Case And Navigates to Flexible Spendings
     And Click On New Button
     And Select PhoneCall Option
@@ -33,7 +35,7 @@ Feature: Validation of E2E scenario 89925
     And Navigate to the Your Spendings Fixed page and enter the data as DataTable and Assert Total Fixed Spendings as "605.00"
       | field                                 | amount|index |   arrears   |
       | Board                                 | 300   | 4    |     No      |
-      | Buildings and contents insurance      | 55   | 4    |      No      |
+      | Buildings and contents insurance      | 55   | 4    |     No      |
       | Life insurance                        | 20    | 4    |     No      |
       | Car insurance 1                       | 20    | 4    |     No      |
       | Car insurance 2                       | 20    | 4    |     No      |
@@ -45,9 +47,9 @@ Feature: Validation of E2E scenario 89925
       | Breakdown cover 2                     | 10    | 4    |     false   |
       | MOT and ongoing vehicle maintenance 1 | 5     | 4    |     false   |
       | MOT and ongoing vehicle maintenance 2 | 5     | 4    |     false   |
-      | Prescriptions and medicine            | 10     | 4    |    false   |
-      | Dentistry                             | 10     | 4    |    false   |
-      | Opticians                             | 10     | 4    |    false   |
+      | Prescriptions and medicine            | 10     | 4    |     false   |
+      | Dentistry                             | 10     | 4    |     false   |
+      | Opticians                             | 10     | 4    |     false   |
  #   And Navigate to the Spending Fixed Costs page and enter the data
     And User clicks on continue The screen
     And Navigate to the Your Spendings Flexible page and enter the data as DataTable and Assert The totatl Spedings As "888"
