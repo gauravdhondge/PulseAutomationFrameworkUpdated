@@ -71,8 +71,7 @@ public class YourHouseHoldHelper extends YourHouseHoldPage {
         return noOfVehicles=new TextField(By.name("$PpyWorkPage$pHouseholdComposition$pVehiclesInBudget"));
     }
 
-    public void
-        fillHouseHoldDetails(List<HouseHoldsFileds> houseHoldsFileds)
+    public void fillHouseHoldDetails(List<HouseHoldsFileds> houseHoldsFileds)
     {
         HouseHoldsFileds houseHolds = houseHoldsFileds.get(0);
         this.getHousingStatus().selectFromDropdownByText(houseHolds.getHousingStatus());
@@ -92,6 +91,7 @@ public class YourHouseHoldHelper extends YourHouseHoldPage {
         this.getNoOfVehicles().enterText(houseHolds.getNoOfVehicles());
         this.getContinueButton().click();
         this.getCofirmHouseHold().click();
+
 
     }
 }

@@ -122,6 +122,8 @@ public class EstablishClientNeedsHelper extends EstablishClientNeedsPage{
             this.getDoTheyCurrentlyHaveAnyHealthConditions(noOfClients + 1, client.get("healthCondition")).click();
             fillHealthConditionDetails(client,noOfClients + 1);
         }
+        verifyOverLayDisplayed();
+        getBrowser().sleep(5000);
         this.getContinueButton().click();
 
     }

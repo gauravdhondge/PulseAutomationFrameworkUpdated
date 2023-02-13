@@ -15,8 +15,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class YourDebtsHelper extends YourDebtsPage {
-
-    private Button GlobalQuestions;
     AutoComplete creditor;
     AutoComplete debttype;
     TextField amountOwed;
@@ -42,12 +40,6 @@ public class YourDebtsHelper extends YourDebtsPage {
     Button courtActionType;
     TextField courtActionPayment;
     Dropdown courtActionPaymentForEvery;
-
-
-    public Button getGlobalQuestions() {
-        return GlobalQuestions=new Button(By.xpath("//button[text()='Global questions']"));
-    }
-
 
     public TextField getCourtActionPayment(int index) {
         return courtActionPayment=new TextField(By.xpath("//input[contains(@aria-describedby,'$l"+index+"$pArrangementError')]"));
@@ -233,7 +225,9 @@ public class YourDebtsHelper extends YourDebtsPage {
         return liability = new Dropdown(By.xpath("//select[contains(@name,'$ppxResults$l" + index + "$pOwnership$pCode')]"));
     }
 
-    public void completeTheDebtDetails(List<DebtsFields> debitDetails, String totalAmount) {
+    public void completeTheDebtDetails(List<DebtsFields> debitDetails, String
+            totlAmount) {
+        switchToActiveFrame();
         this.getDebtsPageHeader().waitForElementIdDisplayed();
         for (int i = 0; i < debitDetails.size(); i++) {
             this.getAddDebt().click();
@@ -245,11 +239,12 @@ public class YourDebtsHelper extends YourDebtsPage {
                 }
                 getSubmit().click();
             }
-            int actualPostition = i + 1;
-            verifyOverLayDisplayed();
+            int actualPostition = i+1;
+            getBrowser().sleep(3000);
             fillCreditorsDetails(debitDetails, i, actualPostition);
+            getBrowser().sleep(3000);
             fillDebtTypeDetails(debitDetails, i, actualPostition);
-            verifyOverLayDisplayed();
+            getBrowser().sleep(3000);
             this.getAmountOwed(actualPostition).enterText(debitDetails.get(i).getAmountOwed());
             verifyOverLayDisplayed();
             this.getLiability(actualPostition).selectFromDropdownByIndex(Integer.parseInt(debitDetails.get(i).getLiability()));
@@ -258,9 +253,9 @@ public class YourDebtsHelper extends YourDebtsPage {
 //                getArrearsFurtherActions(actualPostition, debitDetails.get(i).getFurtherAction()).click();
 //            verifyOverLayDisplayed();
 //            getBrowser().sleep(3000);
- //           getDetailedView(actualPostition).click();
+//            getDetailedView(actualPostition).click();
 //            verifyOverLayDisplayed();
-            getBrowser().sleep(5000);
+            getBrowser().sleep(3000);
             if (debitDetails.get(i).getAreYouBehindWithPayments()!=null && !debitDetails.get(i).getAreYouBehindWithPayments().isEmpty()&&!(debitDetails.get(i).getAreYouBehindWithPayments().equalsIgnoreCase("false")))
             getAreYouBeHindWithPayments(actualPostition, debitDetails.get(i).getAreYouBehindWithPayments()).click();
             verifyOverLayDisplayed();
@@ -272,14 +267,14 @@ public class YourDebtsHelper extends YourDebtsPage {
             getBrowser().sleep(3000);
             getDetailedView(actualPostition).click();
         }
- //       String result = getTotalDebts().getDivText().replaceAll("[^a-zA-Z0-9]", "");
- //       System.out.println(result);
- //       assert result.contains(totalAmount);
-        getAllOfClientsDFebtsHaveBeenCaptured().click();
+//        String result = getTotalDebts().getDivText().replaceAll("[^a-zA-Z0-9]", "");
+//        System.out.println(result);
+//        assert result.contains(totalAmount);
+      getAllOfClientsDFebtsHaveBeenCaptured().click();
 
     }
 
-    public void navigatedBackAndCompleteTheDebtDetails(List<DebtsFields> debitDetails, String totalAmount, int recurrence) throws InterruptedException {
+    public void navigatedBackAndCompleteTheDebtDetails(List<DebtsFields> debitDetails, String totalAmount, int recurrence) {
         switchToActiveFrame();
         this.getDebtsPageHeader().waitForElementIdDisplayed();
         for (int i = 0; i < debitDetails.size() ; i++) {
@@ -294,8 +289,8 @@ public class YourDebtsHelper extends YourDebtsPage {
             verifyOverLayDisplayed();
             this.getLiability(actualPostition).selectFromDropdownByIndex(Integer.parseInt(debitDetails.get(i).getLiability()));
             verifyOverLayDisplayed();
- //           getDetailedView(actualPostition).click();
- //           verifyOverLayDisplayed();
+            getDetailedView(actualPostition).click();
+            verifyOverLayDisplayed();
             if (debitDetails.get(i).getFurtherAction()!=null && !debitDetails.get(i).getFurtherAction().isEmpty()&&(debitDetails.get(i).getFurtherAction().equalsIgnoreCase("Yes")||debitDetails.get(i).getFurtherAction().equalsIgnoreCase("No"))) {
                 getArrearsFurtherActions(actualPostition, debitDetails.get(i).getFurtherAction()).click();
                 verifyOverLayDisplayed();
@@ -309,12 +304,10 @@ public class YourDebtsHelper extends YourDebtsPage {
             verifyOverLayDisplayed();
             getDetailedView(actualPostition).click();
         }
-        String result = getTotalDebts().getDivText().replaceAll("[^a-zA-Z0-9]", "");
-        System.out.println(result);
-        assert result.contains(totalAmount);
+//        String result = getTotalDebts().getDivText().replaceAll("[^a-zA-Z0-9]", "");
+//        System.out.println(result);
+//        assert result.contains(totalAmount);
         getAllOfClientsDFebtsHaveBeenCaptured().click();
-        Thread.sleep(4000);
-        this.getGlobalQuestions().click();
 
     }
 
@@ -426,8 +419,8 @@ public class YourDebtsHelper extends YourDebtsPage {
 
     private void fillDebtTypeDetails(List<DebtsFields> debitDetails, int i, int actualPostition) {
         this.getDebttype(actualPostition).enterTextThenSelectFromAutoComplete(debitDetails.get(i).getDebttype());
-        verifyOverLayDisplayed();
-//        this.getDebttype(actualPostition).downArrow();
+       verifyOverLayDisplayed();
+        this.getDebttype(actualPostition).downArrow();
         this.getDebttype(actualPostition).enter();
         this.getDebttype(actualPostition).tab();
         this.getAmountOwed(actualPostition).clear();

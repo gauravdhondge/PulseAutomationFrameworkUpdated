@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,32 +19,15 @@ import java.util.concurrent.TimeUnit;
 public class YourIncomePageHelper extends YourIncomePage{
     static int counter=0;
 
-
-    private Dropdown SupplierDropDownele;
-    private Dropdown SupplierDropDowngas;
-    private Dropdown SupplierDropDownWater;
-    Button PrepaymentMeterButtonEleNO;
-    Button PrepaymentMeterButtonGasNO;
-
-
-
-//    public Div getSpendingPageHeader() {
-//        return spendingPageHeader= new Div(By.xpath("(//div[@class='content-item content-label item-1 remove-top-spacing remove-left-spacing flex flex-row dataLabelWrite heading_1_dataLabelWrite'])"));
-//    }
-
-    public Div getSpendingPageHeader() {
-        return spendingPageHeader= new Div(By.xpath("//div[text()='Spending - fixed costs']"));
-    }
-
-
-    public Div getSpendingFlexibleCost() {
-        return SpendingFlexibleCost= new Div(By.xpath("//div[text()='Spending - flexible costs']"));
-    }
-
+   public Div   getSpendingPageHeader() {
+   return spendingPageHeader= new Div(By.xpath("//div[@class='content-item content-label item-1 remove-top-spacing remove-left-spacing flex flex-row dataLabelWrite heading_1_dataLabelWrite']"));
+      /// return  spendingPageHeader=new Div(By.xpath("//div[contains(text(),'Spending')]")) ;
+   }
 
     public Button getSubmit() {
         return submit = new Button(By.xpath("//button[.='Submit']"));
     }
+
 
     Button submit;
     Button addField;
@@ -56,10 +40,6 @@ public class YourIncomePageHelper extends YourIncomePage{
 //    WebElement  removeButton;
 
     Div spendingPageHeader;
-
-    Div SpendingFlexibleCost;
-
-
 
     public Div getTotalIncome() {
         return totalIncome=new Div(By.xpath("//div[.='Income']//following::span[3]"));
@@ -78,16 +58,16 @@ public class YourIncomePageHelper extends YourIncomePage{
     Div totableAvaialeForDebts;
     TextField incomeTextBox;
     Dropdown  incomePaymentDropDown;
-
-    Dropdown SupplierDropdown;
     List<WebElement>  labelOfTheField;
     ArrayList<String> allDetailsFromWebPage;
     Button arrearsButton;
-
-    Button PrePaymentMeterButton;
+    Button PrepaymentMeterButtonEleNO;
+    Button PrepaymentMeterButtonGasNO;
     private Checkbox allFixedSpendingCompleted;
-
     private Checkbox allFlexibleSpendingCompleted;
+    private Dropdown SupplierDropDownele;
+    private Dropdown SupplierDropDowngas;
+    private Dropdown SupplierDropDownWater;
     private Button backButton;
     private Dropdown owner;
 
@@ -115,7 +95,6 @@ public class YourIncomePageHelper extends YourIncomePage{
         return incomePaymentDropDown= new Dropdown(By.xpath("//div[.=\""+text+"\"]//following::select[1]"));
     }
 
-
     public Dropdown getSupplierDropDownElec() {
         return SupplierDropDownele= new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l2$pCaptureUtilityProvider']"));
     }
@@ -126,34 +105,16 @@ public class YourIncomePageHelper extends YourIncomePage{
         return SupplierDropDownWater= new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l4$pCaptureUtilityProvider']"));
     }
 
-//    public Button getPrepaymentMeterButtonEleNO(){
-//        return PrepaymentMeterButtonEleNO=new Button(By.xpath("//div[contains(text(),'Pre-payment')]/..//label[text()='No']['1']"));
-//    }
-
     public Button getPrepaymentMeterButtonEleNO(){
-        return PrepaymentMeterButtonEleNO=new Button(By.xpath("//div[text()='Electricity']//following::label[8]"));
+        return PrepaymentMeterButtonEleNO=new Button(By.xpath("(//div[contains(text(),'Pre-payment')]/..//label[text()='No']['1'])[1]"));
     }
-
     public Button getPrepaymentMeterButtonGasNO(){
-        return PrepaymentMeterButtonGasNO=new Button(By.xpath("//div[text()='Gas']//following::label[8]"));
+
+            return PrepaymentMeterButtonGasNO=new Button(By.xpath("(//div[contains(text(),'Pre-payment')]/..//label[text()='No']['1'])[2]"));
     }
-
-
-
-//    public Button getPrepaymentMeterButtonGasNO(){
-//        return PrepaymentMeterButtonGasNO=new Button(By.xpath("//div[contains(text(),'Pre-payment')]/..//label[text()='No']['2']"));
-//    }
-
-
-
     public Button getArrearsButton(String text,String label) {
         return arrearsButton= new Button(By.xpath("//div[.=\""+text+"\" ]//following::label[.='"+label+"']"));
     }
-
-    public Button getPrePaymentMeterButton(String text,String label) {
-        return PrePaymentMeterButton= new Button(By.xpath("//div[.=\""+text+"\" ]//following::label[.='"+label+"']"));
-    }
-
 
     public YourIncomePageHelper()
     {
@@ -288,7 +249,6 @@ public class YourIncomePageHelper extends YourIncomePage{
             this.getIncomeTextBox(field.getField()).tab();
             getBrowser().sleep(getBrowser().getTimeout());
             verifyOverLayDisplayed();
-//            verifyOverLayDisplayed();
             for (WebElement element:getDriver().findElements(this.getIncomePaymentDropDown(field.getField()).getSelector())) {
                 Select payments=new Select(element);
                 if(payments.getFirstSelectedOption().getText().contains("select"))
@@ -309,36 +269,85 @@ public class YourIncomePageHelper extends YourIncomePage{
         this.getContinueYourIncomeButton().click();
 
     }
-    public void  addSpendingDetails(List<SpendingsFields> details,String totalFixedSpendings) throws InterruptedException {
+    public void addSpendingDetails(List<SpendingsFields> details,String totalFixedSpendings)
+    {
         switchToActiveFrame();
-        this.getSpendingPageHeader().waitForElementIdDisplayed();
-        this.removeButtonsFromIncomePage(details);
+       this.getSpendingPageHeader().waitForElementIdDisplayed();
+       getBrowser().sleep(3000);
+       this.removeButtonsFromIncomePage(details);
         for (SpendingsFields field:details) {
-            this.log("Value Provided for Spending Field:: "+field.getField()+" :: "+field.getAmount()+" :: "+field.getIndex()+" :: "+field.getArrears()+" :: "+field.getSupplier()+" :: "+field.getPrePaymentMeter());
-            verifyOverLayDisplayed();
-                verifyFieldIsAddedInthScreenIfNotAddTheField(field);
+            this.log("Value Provided for Spending Field:: "+field.getField()+" :: "+field.getAmount()+" :: "+field.getIndex()+" :: "+field.getArrears()+"::"+field.getSupplier());
+            verifyFieldIsAddedInthScreenIfNotAddTheField(field);
             this.getIncomeTextBox(field.getField()).enterText(field.getAmount());
-            verifyOverLayDisplayed();
             this.getIncomeTextBox(field.getField()).tab();
-            verifyOverLayDisplayed();
             this.getIncomePaymentDropDown(field.getField()).selectFromDropdownByIndex(Integer.parseInt(field.getIndex()));
-            verifyOverLayDisplayed();
             if(!field.getArrears().equalsIgnoreCase("false"))
             this.getArrearsButton(field.getField(),field.getArrears()).click();
-            this.getSupplierDropDownElec().selectFromDropdownByIndex(4);
-            this.enter();
-            this.getSupplierDropDownGas().selectFromDropdownByIndex(4);
-            this.enter();
-            this.getSupplierDropDownWater().selectFromDropdownByIndex(6);
-            this.enter();
+            getBrowser().sleep(1000);
+            this.getSupplierDropDownElec().selectFromDropdownByText("British Gas");
+            getBrowser().sleep(2000);
+            this.getSupplierDropDownGas().selectFromDropdownByText("British Gas");
+            getBrowser().sleep(2000);
+            this.getSupplierDropDownWater().selectFromDropdownByText("Bristol Water");
+            getBrowser().sleep(2000);
+            this.getPrepaymentMeterButtonEleNO().click();
+            getBrowser().sleep(5000);
+            this.getPrepaymentMeterButtonGasNO().click();
+
+//            if
+//              (!field.getSupplier().equalsIgnoreCase("false"))
+//                for(int j=2;j<=4;j++){
+//                this.getSupplierDropDown(j,field.getField()).selectFromDropdownByIndex(Integer.parseInt(field.getIndex());
+//                    scrollIntoElementView();
+//            getBrowser().sleep(3000);}
+//            for(int h=1;h<=2;h++){
+//            this.getPrepaymentMeterButton(h).click();
+//            scrollElementIntoView();
+//            getBrowser().sleep(3000);}
+        }
+        verifyOverLayDisplayed();
+        this.getAllFixedSpendingCompleted().click();
+
+//        String amount ;
+//        AAssert.assertContains(getTotalSpendings().getDivText().replaceAll("[^a-zA-Z0-9.]", ""),totalFixedSpendings,"Total Fixed Spendings are Not Matched");
+//        this.getTotalSpendings().verifyDivContains(totalFixedSpendings);
+
+
+    }
+
+
+
+
+    public void  addSpendingDetailsR(List<SpendingsFields> details,String totalFixedSpendings1)
+    {
+        //switchToActiveFrame();
+       // getBrowser().sleep(5000);
+      // this.getSpendingPageHeader().waitForElementIdDisplayed();
+      // getBrowser().sleep(3000);
+       this.removeButtonsFromIncomePage(details);
+        for (SpendingsFields field:details) {
+            this.log("Value Provided for Spending Field:: "+field.getField()+" :: "+field.getAmount()+" :: "+field.getIndex()+" :: "+field.getArrears()+"::"+field.getSupplier());
+            verifyFieldIsAddedInthScreenIfNotAddTheField(field);
+            this.getIncomeTextBox(field.getField()).enterText(field.getAmount());
+            this.getIncomeTextBox(field.getField()).tab();
+            this.getIncomePaymentDropDown(field.getField()).selectFromDropdownByIndex(Integer.parseInt(field.getIndex()));
+            if(!field.getArrears().equalsIgnoreCase("false"))
+                this.getArrearsButton(field.getField(),field.getArrears()).click();
+            if(!field.getSupplier().equalsIgnoreCase("false")){
+                this.getSupplierDropDownElec().selectFromDropdownByText("British Gas");
+                this.getSupplierDropDownGas().selectFromDropdownByText("British Gas");
+                this.getSupplierDropDownWater().selectFromDropdownByText("Bristol Water");
+            }
             this.getPrepaymentMeterButtonEleNO().click();
             this.getPrepaymentMeterButtonGasNO().click();
 
 
 
         }
+        verifyOverLayDisplayed();
         this.getAllFixedSpendingCompleted().click();
-//        String amount = ;
+
+//        String amount ;
 //        AAssert.assertContains(getTotalSpendings().getDivText().replaceAll("[^a-zA-Z0-9.]", ""),totalFixedSpendings,"Total Fixed Spendings are Not Matched");
 //        this.getTotalSpendings().verifyDivContains(totalFixedSpendings);
 
@@ -347,8 +356,9 @@ public class YourIncomePageHelper extends YourIncomePage{
     public void  addFlexibleSpendingDetails(List<SpendingsFields> details,String totalSpendings)
     {
         switchToActiveFrame();
-        this.getSpendingFlexibleCost().waitForElementIdDisplayed();
-        this.getBrowser().sleep(10000);
+        getBrowser().sleep(5000);
+      this.getSpendingPageHeader().waitForElementIdDisplayed();
+        this.getBrowser().sleep(2000);
         this.removeButtonsFromIncomePage(details);
         for (SpendingsFields field:details)
         {
@@ -364,7 +374,9 @@ public class YourIncomePageHelper extends YourIncomePage{
             if(!field.getArrears().equalsIgnoreCase("false"))
                 this.getArrearsButton(field.getField(),field.getArrears()).click();
         }
+        verifyOverLayDisplayed();
         this.getAllFlexibleSpendingCompleted().click();
+
 //        String amount = ;
 //        AAssert.assertContains(getTotalSpendings().getDivText().replaceAll("[^a-zA-Z0-9.]", "") ,totalSpendings,"Total Flexible Spendings are Not Matched");
 //        this.getTotalSpendings().verifyDivContains(totalSpendings);
@@ -389,6 +401,21 @@ public class YourIncomePageHelper extends YourIncomePage{
             } else if (text.getField().equalsIgnoreCase("School uniform")) {
                 this.getAddField("school uniform").click();
             } else {
+                this.getAddField(text.getField().toLowerCase()).click();
+            }
+        }
+    }
+    public void verifyFieldIsAddedInthScreenIfNotAddTheField2(SpendingsFields text) {
+        try {
+            this.getIncomeTextBox(text.getField()).clear();
+        } catch (Exception ex) {
+            if (text.getField().equalsIgnoreCase("Electricity")) {
+                this.getAddField("Electricity").click();
+            } else if (text.getField().equalsIgnoreCase("Gas")) {
+                this.getAddField("Gas").click();
+            } else if(text.getField().equalsIgnoreCase("Water Supply")){
+                this.getAddField("Water Supply").click();
+            }else {
                 this.getAddField(text.getField().toLowerCase()).click();
             }
         }

@@ -43,7 +43,8 @@ public class AssetPageHelper extends Control {
     public Dropdown getOwner(String text) {
         return owner= new Dropdown(By.xpath("//div[.='"+text+"']//following::select[1]"));
     }
-    public void fillAssetDetails(List<AssetsFields> assetsFields) throws InterruptedException {
+    public void fillAssetDetails(List<AssetsFields> assetsFields)
+    {
         switchToActiveFrame();
         for (AssetsFields field:assetsFields) {
             if(field.isMainHome())
@@ -54,14 +55,10 @@ public class AssetPageHelper extends Control {
             else
             {
                 this.getAddAsset(field.getField().toLowerCase()).click();
-                Thread.sleep(5000);
                 this.getValueOfTheAsset(field.getField()).enterText(field.getValue());
-                Thread.sleep(4000);
                 this.getOwnerOfTheAsset(field.getField()).selectFromDropdownByIndex(Integer.valueOf(field.getOwner()));
-                Thread.sleep(4000);
                 this.getShareValue(1).enterText(field.getShareValue());
-                Thread.sleep(4000);
-     //           this.getShareValue(1).tab();
+                this.getShareValue(1).tab();
             }
         }
         this.getAllAssetsCaptured().click();

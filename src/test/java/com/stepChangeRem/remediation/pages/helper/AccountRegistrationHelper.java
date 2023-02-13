@@ -221,24 +221,29 @@ public class AccountRegistrationHelper extends Control {
 //                    this.getSearchPostCodeRep(i).click();
 //                    this.getAddressRep(i).selectFromDropdownByIndex(accountRegistrationFields.get(i).getAddress().intValue());
             }
-//            if (i == 0) {
+         //if (i == 0) {
             int actualPosition = i + 1;
             this.getTitle(actualPosition).selectFromDropdownByText(accountRegistrationFields.get(i).getTitle());
+            getBrowser().sleep(2000);
             this.getFirstName(actualPosition).enterText(accountRegistrationFields.get(i).getFirstName());
+             getBrowser().sleep(2000);
             this.getSurname(actualPosition).enterText(accountRegistrationFields.get(i).getSurname());
-            this.getDateOfBirth(actualPosition).enterText(accountRegistrationFields.get(i).getDateOfBirth());
-            this.getEmail(actualPosition).enterText(randomString + i);
+             getBrowser().sleep(2000);
+             this.getDateOfBirth(actualPosition).enterText(accountRegistrationFields.get(i).getDateOfBirth());
+             getBrowser().sleep(2000);
+             this.getEmail(actualPosition).enterText(randomString + i);
             for (int j = 0; j < 3; j++) {
                 this.getDomain(actualPosition).enterText(accountRegistrationFields.get(i).getDomain());
                 this.getDomain(actualPosition).downArrow();
                 this.getDomain(actualPosition).enter();
             }
             this.getPhoneNumber(actualPosition).enterText(accountRegistrationFields.get(i).getPhoneNumber());
+             getBrowser().sleep(2000);
             this.getPhoneType(actualPosition).selectFromDropdownByText(accountRegistrationFields.get(i).getPhoneType());
             if (i == 0 && !accountRegistrationFields.get(i).isCaptureAddressManually()) {
                 this.getPostCode(actualPosition).enterText(accountRegistrationFields.get(i).getPostCode());
                 this.getSearchPostCode(actualPosition).click();
-                this.getAddress(actualPosition).selectFromDropdownByIndex(accountRegistrationFields.get(i).getAddress());
+                this.getAddress(actualPosition).selectFromDropdownByIndex(accountRegistrationFields.get(i).getAddress().intValue());
             } else if (accountRegistrationFields.get(i).isCaptureAddressManually()) {
                 new Button(By.xpath("//button[.='Enter address manually']")).click();
                 this.getHouseNumber().enterText("5");
@@ -246,15 +251,15 @@ public class AccountRegistrationHelper extends Control {
                 this.getTown().enterText("Liver pool");
                 this.getPostcode().enterText("L1 8JQ");
 
-            }
+           // }
             this.getPreferredContactMethod(actualPosition, accountRegistrationFields.get(i).getPreferredContactMethod()).click();
-//            }
+         }
 
         }
         this.getCreateAccount().click();
         switchToActiveFrame();
         for (int i = 0; i < email.size(); i++) {
-            this.getConfirmEmail(i + 1).clear();
+           // this.getConfirmEmail(i + 1).clear();
             this.getConfirmEmail(i + 1).enterText(email.get(i) + "@" + accountRegistrationFields.get(i).getDomain());
             this.getConfirmEmail(i + 1).tab();
         }
