@@ -14,12 +14,11 @@ public class FinalQuestionsPage extends Control {
 	GenericMethodsRemediation genericMethodsCvp = new GenericMethodsRemediation();
 	private Button WhatTypesofJobsCouldbeAffectedNoButton;
 	private Button WhatisaDebtSolutionNoButton;
+	private Button WhatisaDebtReliefSolutionNoButton;
 	private Button FinalQuestionsPageContinueButton;
 private Button EmploymentbeEffectedNoButton;
 	private Button AwardedbankruptcyNoButton;
 	private Button MinimalAssetprocessNoButton;
-
-	private Button ThirdPartiesInvolvedAwareSeekingDebtAdviceNoButton;
 	private Button PreviouslybeenADebtSolution;
 	private Button WhatisaDebtSolutionNoButtonforClient1;
 	private Button WhatisaDebtSolutionNoButtonforclient2;
@@ -50,6 +49,9 @@ private Button EmploymentbeEffectedNoButton;
 	public Button getWhatisaDebtSolutionNoButton() {
 		return WhatisaDebtSolutionNoButton;
 	}
+	public Button getWhatisaDebtReliefSolutionNoButton() {
+		return WhatisaDebtReliefSolutionNoButton;
+	}
 	public Button getFinalQuestionsPageContinueButton() {
 		return FinalQuestionsPageContinueButton;
 	}
@@ -58,8 +60,6 @@ private Button EmploymentbeEffectedNoButton;
 	public Button getEmploymentbeEffectedNoButton() {return EmploymentbeEffectedNoButton;}
 	public Button getAwardedbankruptcyNoButton() {return AwardedbankruptcyNoButton;}
 	public Button getMinimalAssetprocessNoButton() {return MinimalAssetprocessNoButton;}
-
-	public Button getThirdPartiesInvolvedAwareSeekingDebtAdviceNoButton() {return ThirdPartiesInvolvedAwareSeekingDebtAdviceNoButton;}
 	public Button getPreviouslybeenADebtSolution() {return PreviouslybeenADebtSolution;}
 
 	public Button getWhatisaDebtSolutionNoButtonforClient1() {
@@ -104,26 +104,26 @@ private Button EmploymentbeEffectedNoButton;
 	public FinalQuestionsPage() {
 		HaveYouPreviouslyBeenOnDebtSolutionClient01=new Button(By.xpath("(//label[text()='No'])[1]"));
 		HaveYouPreviouslyBeenOnDebtSolutionClient02=new Button(By.xpath("(//label[text()='No'])[2]"));
-		WhatTypesofJobsCouldbeAffectedNoButton = new Button(By.xpath("(//label[text()='No'])[1]"));	
-		WhatisaDebtSolutionNoButton = new Button(By.xpath("(//label[text()='No'])[2]"));
+		WhatTypesofJobsCouldbeAffectedNoButton = new Button(By.xpath("(//label[text()='No'])[1]"));
+		WhatisaDebtReliefSolutionNoButton= new Button(By.xpath("(//label[text()='No'])[2]"));
+		WhatisaDebtSolutionNoButton = new Button(By.xpath("(//label[text()='No'])[3]"));
 		FinalQuestionsPageContinueButton = new Button(By.xpath("//button[text()='Continue']"));
 		EmploymentbeEffectedNoButton=new Button(By.xpath("(//label[text()='No'])[1]"));
-		AwardedbankruptcyNoButton=new Button(By.xpath("(//label[text()='No'])[1]"));
-		MinimalAssetprocessNoButton=new Button(By.xpath("(//label[text()='No'])[2]"));
-		ThirdPartiesInvolvedAwareSeekingDebtAdviceNoButton=new Button(By.xpath("(//label[text()='No'])[3]"));
+		AwardedbankruptcyNoButton=new Button(By.xpath("(//label[text()='No'])[2]"));
+		MinimalAssetprocessNoButton=new Button(By.xpath("(//label[text()='No'])[3]"));
 		PreviouslybeenADebtSolution=new Button(By.xpath("(//label[text()='No'])[4]"));
 		WhatisaDebtSolutionNoButtonforClient1= new Button(By.xpath("(//label[text()='No'])[1]"));
 		WhatisaDebtSolutionNoButtonforclient2= new Button(By.xpath("(//label[text()='No'])[3]"));
 		EmployementBeEffectedInsolvencyYesButtonforclient2= new Button(By.xpath("(//label[text()='Yes'])[2]"));
 		EmployementBeEffectedInsolvencyYesButtonforclient2No= new Button(By.xpath("(//label[text()='No'])[2]"));
 
-		WhatTypesofJobsCouldbeAffectedNoButtonClient1= new Button(By.xpath("(//label[text()='No'])[1]"));
+		WhatTypesofJobsCouldbeAffectedNoButtonClient1= new Button(By.xpath("//div[text()='Could employment be impacted by an insolvency solution?'][1]//following::label[2]"));
 		WhatTypesofJobsCouldbeAffectedYesButtonClient1= new Button(By.xpath("//div[text()='Could employment be impacted by an insolvency solution?'][1]//following::label[1]"));
-		WhatisaDebtSolutionNoButtonClient1= new Button(By.xpath("(//label[text()='No'])[3]"));
-		HaveTheyAppliedDroNoButtonClient1= new Button(By.xpath("(//label[text()='No'])[2]"));
-		WhatTypesofJobsCouldbeAffectedNoButtonClient2= new Button(By.xpath("(//label[text()='No'])[4]"));
-		WhatisaDebtSolutionNoButtonClient2= new Button(By.xpath("(//label[text()='No'])[6]"));
-		HaveTheyAppliedDroNoButtonClient2= new Button(By.xpath("(//label[text()='No'])[5]"));
+		WhatisaDebtSolutionNoButtonClient1= new Button(By.xpath("(//div[text()='Have you previously been on a debt solution?'])[1]//following::label[2]"));
+		HaveTheyAppliedDroNoButtonClient1= new Button(By.xpath("((//div[text()='Have they applied for a Debt Relief Order which was approved in the last 6 years?'])[1])//following::label[2]"));
+		WhatTypesofJobsCouldbeAffectedNoButtonClient2= new Button(By.xpath("(//div[text()='Could employment be impacted by an insolvency solution?'])[2]//following::label[2]"));
+		WhatisaDebtSolutionNoButtonClient2= new Button(By.xpath("(//div[text()='Have you previously been on a debt solution?'])[2]//following::label[2]"));
+		HaveTheyAppliedDroNoButtonClient2= new Button(By.xpath("(//div[text()='Have they applied for a Debt Relief Order which was approved in the last 6 years?'])[2]//following::label[2]"));
 		WhatisaDebtSolutionNoButtonforClient1_89940=new Button(By.xpath("( //input[contains(@name,'QualifierList$ppxResults')])[2]"));
 		WhatisaDebtSolutionNoButtonforClient2_89940=new Button(By.xpath("( //input[contains(@name,'QualifierList$ppxResults')])[4]"));
 		WhatisaDebtSolutionNoButtonforClient2_89921_02=new Button(By.xpath("(//label[text()='No'])[3]"));
@@ -142,7 +142,11 @@ private Button EmploymentbeEffectedNoButton;
 		genericMethodsCvp.implicitWait(3000);
 		this.getWhatisaDebtSolutionNoButton().click();
 	}
-	
+	public void ClickWhatisaDebtReliefSolutionNoButton() {
+		genericMethodsCvp.implicitWait(3000);
+		this.getWhatisaDebtReliefSolutionNoButton().click();
+	}
+
 	public void ClickFinalQuestionsPageContinueButton() {
 		genericMethodsCvp.implicitWait(3000);
 		this.getFinalQuestionsPageContinueButton().click();
@@ -172,18 +176,16 @@ private Button EmploymentbeEffectedNoButton;
 
 	}
 	public void FillrequireddetailsasQASC89937() {
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(2000);
 		switchToActiveFrame();
-//		this.getEmploymentbeEffectedNoButton().click();
-		genericMethodsCvp.implicitWait(4000);
+		this.getEmploymentbeEffectedNoButton().click();
+		genericMethodsCvp.implicitWait(2000);
 		this.getAwardedbankruptcyNoButton().click();
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(2000);
 		this.getMinimalAssetprocessNoButton().click();
-		genericMethodsCvp.implicitWait(4000);
-		this.getThirdPartiesInvolvedAwareSeekingDebtAdviceNoButton().click();
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(2000);
 		this.getPreviouslybeenADebtSolution().click();
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(2000);
 		this.getFinalQuestionsPageContinueButton().click();
 	}
 
@@ -232,18 +234,11 @@ private Button EmploymentbeEffectedNoButton;
 
 	public void FillrequireddetailsForClient1and2for89949() {
 		this.getWhatTypesofJobsCouldbeAffectedNoButtonClient1().click();
-		genericMethodsCvp.implicitWait(4000);
 		this.getHaveTheyAppliedDroNoButtonClient1().click();
-		genericMethodsCvp.implicitWait(4000);
-//		this.getWhatTypesofJobsCouldbeAffectedNoButtonClient1().click();
 		this.getWhatisaDebtSolutionNoButtonClient1().click();
-		genericMethodsCvp.implicitWait(4000);
 		this.getWhatTypesofJobsCouldbeAffectedNoButtonClient2().click();
-		genericMethodsCvp.implicitWait(4000);
 		this.getHaveTheyAppliedDroNoButtonClient2().click();
-		genericMethodsCvp.implicitWait(4000);
 		this.getWhatisaDebtSolutionNoButtonClient2().click();
-		genericMethodsCvp.implicitWait(4000);
 		ClickFinalQuestionsPageContinueButton();
 
 	}
@@ -265,14 +260,13 @@ private Button EmploymentbeEffectedNoButton;
 			genericMethodsCvp.implicitWait(5000);
 		}
 	}
-	public void devideAssetIntoEqualPortion(String totalWorth, String share) throws InterruptedException {
+	public void devideAssetIntoEqualPortion(String totalWorth, String share)
+	{
 		new TextField(By.xpath("//input[contains(@name,'$ppxResults$l1$pAmount')]")).enterText(totalWorth);
-		Thread.sleep(4000);
-//		new TextField(By.xpath("//input[contains(@name,'$ppxResults$l1$pAmount')]")).tab();
+		new TextField(By.xpath("//input[contains(@name,'$ppxResults$l1$pAmount')]")).tab();
 		verifyOverLayDisplayed();
 		new TextField(By.xpath("//input[contains(@name,'$ppxResults$l1$pOwnership$pExposureList$l1$pPercentage')]")).enterText(share);
-		Thread.sleep(4000);
-//		new TextField(By.xpath("//input[contains(@name,'$ppxResults$l1$pOwnership$pExposureList$l1$pPercentage')]")).tab();
+		new TextField(By.xpath("//input[contains(@name,'$ppxResults$l1$pOwnership$pExposureList$l1$pPercentage')]")).tab();
 		new Checkbox(By.xpath("//input[@name='$PpyWorkPage$pGenericFlag$gAssetInputComplete']/../label")).click();
 	}
 }

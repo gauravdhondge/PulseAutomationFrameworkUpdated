@@ -55,15 +55,8 @@ public class FinalQuestions_AssetsPage  extends Control{
 	private Checkbox AllofClientsAssetshavebeenCapturedCheckBox89934;
 	private Checkbox AllofClientsAssetshavebeenCapturedCheckBox89949;
 
-	private Button RemoveButtonAssetPage;
-
 
 	//Getter Methods
-
-	public Button getRemoveButtonAssetPage(){
-
-		return RemoveButtonAssetPage;
-	}
 	public TextField getMainHomeTextBox() {	return MainHomeTextBox;	}
 	public Dropdown getMainhomeOwnerDropdown() {return MainhomeOwnerDropdown;}
 	public TextField getMainhomeClient01ShareValueTextbox() {return MainhomeClient01ShareValueTextbox ;}
@@ -110,7 +103,6 @@ public class FinalQuestions_AssetsPage  extends Control{
 
 	//Constructor
 	public FinalQuestions_AssetsPage(String otherPropertyName,Integer LinksPopupCheckboxList) {
-		RemoveButtonAssetPage=new Button(By.xpath("//div[text()='Main home']//following::button[1]"));
 		MainHomeTextBox = new TextField(By.xpath("//div[text()='Main home']//following::input[2]"));
 		MainhomeOwnerDropdown=new Dropdown(By.xpath("//div[text()='Main home']//following::select[1]"));
 		MainhomeClient01ShareValueTextbox=new TextField(By.xpath("//div[text()='Main home']//following::input[3]"));
@@ -198,19 +190,6 @@ public void ContinueasGuestUser()
 		genericMethodsCvp.implicitWait(10000);
 	}
 
-	public void FinalQuestionsFillAsset89937()
-	{
-		switchToActiveFrame();
-		genericMethodsCvp.implicitWait(10000);
-		this.getAllofClientsAssetshavebeenCapturedCheckBox89934().click();
-		this.getAssetsPageContinueButton().click();
-		genericMethodsCvp.implicitWait(10000);
-	}
-
-
-
-
-
 	public void FillAssestsJointMPA()
 	{
 		genericMethodsCvp.implicitWait(2000);
@@ -251,9 +230,6 @@ public void ContinueasGuestUser()
 	public void ContinueasGuestUser89949()
 	{
 		switchToActiveFrame();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveButtonAssetPage().click();
-		genericMethodsCvp.implicitWait(5000);
 		this.getAllofClientsAssetshavebeenCapturedCheckBox89949().click();
 		genericMethodsCvp.implicitWait(3000);
 		this.getAssetsPageContinueButton().click();

@@ -398,32 +398,38 @@ public class YourSpendingFlexibleCost extends Control {
 	private Button RemoveHouseholdRepairsButton;
 	private Button RemoveHomePhoneIntenetButton;
 	private Button RemoveMobilePhoneButton;
-
-	private Button RemoveHouseholdRepairMaintenance;
 	private Button RemoveHobbiesButton;
 	private Button RemovegiftsButton;
 	private Button RemoveNewsPaperButton;
 	private Button RemoveToiletsButton;
 	private Button RemoveHairDressingButton;
 	private Button FoodAndGrocryAddAnoterButton01;
+	private Button FoodAndGrocryAddAnoterButton02;
+	private Button FoodAndGrocryAddAnoterButton03;
+
 	private TextField MonthlyFoodAndGroceriesTextBox01;
 	private TextField MonthlyFoodAndGroceriesTextBox02;
 	private TextField MonthlyFoodAndGroceriesTextBox03;
 	private TextField MonthlyFoodAndGroceriesTextBox04;
+	private TextField MonthlyFoodAndGroceriesTextBox05;
 	private Dropdown FoodAndGroceriesMonthlyDrop01;
 	private Dropdown FoodAndGroceriesMonthlyDrop02;
 	private Dropdown FoodAndGroceriesMonthlyDrop03;
 	private Dropdown FoodAndGroceriesMonthlyDrop04;
-
+	private Dropdown FoodAndGroceriesMonthlyDrop05;
 	public Button getFoodAndGrocryAddAnoterButton01(){return FoodAndGrocryAddAnoterButton01;}
+	public Button getFoodAndGrocryAddAnoterButton02(){return FoodAndGrocryAddAnoterButton02;}
+	public Button getFoodAndGrocryAddAnoterButton03(){return FoodAndGrocryAddAnoterButton03;}
 	public TextField getMonthlyFoodAndGroceriesTextBox01(){return MonthlyFoodAndGroceriesTextBox01;}
 	public TextField getMonthlyFoodAndGroceriesTextBox02(){return MonthlyFoodAndGroceriesTextBox02;}
 	public TextField getMonthlyFoodAndGroceriesTextBox03(){return MonthlyFoodAndGroceriesTextBox03;}
 	public TextField getMonthlyFoodAndGroceriesTextBox04(){return MonthlyFoodAndGroceriesTextBox04;}
+	public TextField getMonthlyFoodAndGroceriesTextBox05(){return MonthlyFoodAndGroceriesTextBox05;}
 	public Dropdown getFoodAndGroceriesMonthlyDrop01(){return FoodAndGroceriesMonthlyDrop01;}
 	public Dropdown getFoodAndGroceriesMonthlyDrop02(){return FoodAndGroceriesMonthlyDrop02;}
 	public Dropdown getFoodAndGroceriesMonthlyDrop03(){return FoodAndGroceriesMonthlyDrop03;}
 	public Dropdown getFoodAndGroceriesMonthlyDrop04(){return FoodAndGroceriesMonthlyDrop04;}
+	public Dropdown getFoodAndGroceriesMonthlyDrop05(){return FoodAndGroceriesMonthlyDrop05;}
 	public Button getRemoveButtonMealsAtWork() {
 		return RemoveButtonMealsAtWork;
 	}
@@ -442,11 +448,6 @@ public class YourSpendingFlexibleCost extends Control {
 	public Button getRemoveMobilePhoneButton() {
 		return RemoveMobilePhoneButton;
 	}
-
-	public Button getRemoveHouseholdRepairMaintenance() {
-		return RemoveHouseholdRepairMaintenance;
-	}
-
 	public Button getRemoveHobbiesButton() {
 		return RemoveHobbiesButton;
 	}
@@ -488,7 +489,7 @@ public class YourSpendingFlexibleCost extends Control {
 		RemoveToiletsButton = new Button(By.xpath("//div[text()='Toiletries']//following::button[4]"));
 		RemoveHairDressingButton = new Button(By.xpath("//div[text()='Hairdressing']//following::button[4]"));
 		reasonForSpendSubmitButton = new Button(By.xpath("//button[normalize-space()='Submit']"));
-		RemoveHouseholdRepairMaintenance=new Button(By.xpath("//div[text()='Household repairs and maintenance']//following::button[4]"));
+
 		otherPeopleCotributCheckBox = new Checkbox(By.xpath("//label[normalize-space()='Other people contribute towards cost']"));
 
 		HomePhonInternetTvPackageArrearsNoButton=new Button(By.xpath("//div[text()='Home phone, internet and TV package']//following::label[4]"));
@@ -499,7 +500,9 @@ public class YourSpendingFlexibleCost extends Control {
 		FoodAndGroceriesmonthlyDropdown = new Dropdown (By.xpath("//div[text()='Groceries']//following::select[1]"));
 		FoodAndGroceriesOwnerDropdown=new Dropdown(By.xpath("//div[text()='Groceries']//following::select[2]"));
 		FoodAndGroceriesRemoveButton=new Button(By.xpath("//div[text()='Groceries']//following::button[4]"));
-		FoodAndGroceriesAnotherButton=new Button(By.xpath("//button[@name='ExpenditureRow_D_ExpenditureCategoryList.pxResults(3).pxResults(1)_100']"));
+		FoodAndGroceriesAnotherButton=new Button(By.xpath("//button[@name='ExpenditureRow_D_ExpenditureCategoryList.pxResults(3).pxResults(1)_101']"));
+		FoodAndGrocryAddAnoterButton02=new Button(By.xpath("//button[@name='ExpenditureGroupRow_D_ExpenditureCategoryList.pxResults(3).pxResults(1)_23']"));
+		FoodAndGrocryAddAnoterButton03=new Button(By.xpath("//button[@name='ExpenditureGroupRow_D_ExpenditureCategoryList.pxResults(3).pxResults(1)_23']"));
 		ReasonForSpendTitleDiv=new Div(By.xpath("//span[@id='modaldialog_hd_title']"));
 		ReasonForSpendotherPeopleCotributeCheckBox=new Checkbox(By.xpath("//label[normalize-space()='Other people contribute towards cost']"));
 		ReasonForSpendClienthasChosennottoBudget=new Checkbox(By.xpath("//label[normalize-space()='Client has chosen not to budget for this']"));
@@ -657,7 +660,7 @@ public class YourSpendingFlexibleCost extends Control {
 		RemoveSchoolmealsButton = new Button(By.xpath("//div[text()='School meals']//following::button[4]"));
 		RemovePocketMoneygButton = new Button(By.xpath("//div[text()='Pocket money']//following::button[4]"));
 		MoiblephoneArrearsNoButton = new Button(By.xpath("//div[text()='Mobile phone']//following::label[4]"));
-		foodAndGroceriesmonthlyDrop = new Dropdown (By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l3$ppxResults$l1$pFrequency']"));
+		foodAndGroceriesmonthlyDrop = new Dropdown (By.xpath("//div[text()='Groceries']//following::select[1]"));
 		removePersonalCostButton = new Button(By.xpath("//div[text()='Clothing and footwear']//following::button[4]"));
 		MonthlyFoodAndGroceriesTextBox01= new TextField(By.xpath("(//div[text()='Groceries']//following::input[2])[1]"));
 		FoodAndGroceriesMonthlyDrop01 = new Dropdown (By.xpath("(//div[text()='Groceries']//following::select[1])[1]"));
@@ -665,11 +668,12 @@ public class YourSpendingFlexibleCost extends Control {
 		MonthlyFoodAndGroceriesTextBox02= new TextField(By.xpath("(//div[text()='Groceries']//following::input[2])[2]"));
 		MonthlyFoodAndGroceriesTextBox03= new TextField(By.xpath("(//div[text()='Groceries']//following::input[2])[3]"));
 		MonthlyFoodAndGroceriesTextBox04= new TextField(By.xpath("(//div[text()='Groceries']//following::input[2])[4]"));
+		MonthlyFoodAndGroceriesTextBox05= new TextField(By.xpath("(//div[text()='Groceries']//following::input[2])[5]"));
 		FoodAndGroceriesMonthlyDrop01 = new Dropdown (By.xpath("(//div[text()='Groceries']//following::select[1])[1]"));
 		FoodAndGroceriesMonthlyDrop02 = new Dropdown (By.xpath("(//div[text()='Groceries']//following::select[1])[2]"));
 		FoodAndGroceriesMonthlyDrop03 =	new Dropdown (By.xpath("(//div[text()='Groceries']//following::select[1])[3]"));
 		FoodAndGroceriesMonthlyDrop04 = new Dropdown (By.xpath("(//div[text()='Groceries']//following::select[1])[4]"));
-
+		FoodAndGroceriesMonthlyDrop05 = new Dropdown (By.xpath("(//div[text()='Groceries']//following::select[1])[5]"));
 
 		GroceriesAnother=new Button(By.xpath("//div[text()='Groceries']//following::button[text()='Another'][1]"));
 
@@ -768,8 +772,8 @@ public class YourSpendingFlexibleCost extends Control {
 		 this.getClothingAndFootwearTextbox().enterTextField("10");
 		 genericMethodsCvp.implicitWait(5000);
 		 this.getClothingAndFootwearMonthlyDropdown().selectFromDropdown("TPD0002");
-		 genericMethodsCvp.implicitWait(1000);
-		 this.getClothingAndFootwearMonthlyDropdown().tab();
+//		 genericMethodsCvp.implicitWait(1000);
+//	 this.getClothingAndFootwearMonthlyDropdown().tab();
 		 genericMethodsCvp.implicitWait(5000);
 		 this.getAllFlexibleSpendingCompleted().click();
 		 genericMethodsCvp.implicitWait(5000);
@@ -1007,94 +1011,86 @@ public class YourSpendingFlexibleCost extends Control {
 		getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		switchToActiveFrame();
 		this.getMonthlyFoodAndGroceriesTextBox01().verifyInvisiblityIslocated();
-		this.getMonthlyFoodAndGroceriesTextBox01().enterTextField("20");
-		genericMethodsCvp.implicitWait(3000);
-		this.getFoodAndGroceriesMonthlyDrop01().selectFromDropdownByIndex(2);
-//		this.getMonthlyFoodAndGroceriesTextBox01().enterCharByChar("20");
-//		genericMethodsCvp.implicitWait(2000);
-		//this.getMonthlyFoodAndGroceriesTextBox01().tab();
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(2000);
+		this.getMonthlyFoodAndGroceriesTextBox01().enterTextField("50");
+		genericMethodsCvp.implicitWait(5000);
+		this.getFoodAndGroceriesMonthlyDrop01().selectFromDropdownByIndex(3);
+		genericMethodsCvp.implicitWait(2000);
 		this.getFoodAndGroceriesAnotherButton().click();
-		genericMethodsCvp.implicitWait(4000);
-		this.getFoodAndGrocryAddAnoterButton01().click();
-		genericMethodsCvp.implicitWait(4000);
-		this.getFoodAndGrocryAddAnoterButton01().click();
+
+		//Second Groceries @yakub
+		this.getMonthlyFoodAndGroceriesTextBox02().enterTextField("50");
 		genericMethodsCvp.implicitWait(5000);
-//		this.getMonthlyFoodAndGroceriesTextBox01().verifyInvisiblityIslocated();
-//		this.getMonthlyFoodAndGroceriesTextBox01().enterTextField("20");
-		//genericMethodsCvp.implicitWait(2000);
-		//this.getMonthlyFoodAndGroceriesTextBox01().tab();
-//		genericMethodsCvp.implicitWait(4000);
-//		this.getFoodAndGroceriesMonthlyDrop01().selectFromDropdownByIndex(2);
-		//genericMethodsCvp.implicitWait(4000);
-		//genericMethodsCvp.selectByText(FoodAndGroceriesMonthlyDrop01, "weekly");
-		//this.getMonthlyFoodAndGroceriesTextBox02().verifyInvisiblityIslocated();
-		this.getMonthlyFoodAndGroceriesTextBox02().enterTextField("20");
-		//genericMethodsCvp.implicitWait(2000);
-		//this.getMonthlyFoodAndGroceriesTextBox02().tab();
-		genericMethodsCvp.implicitWait(4000);
 		this.getFoodAndGroceriesMonthlyDrop02().selectFromDropdownByIndex(3);
-		genericMethodsCvp.implicitWait(4000);
-		//genericMethodsCvp.selectByText(FoodAndGroceriesMonthlyDrop02, "fortnightly");
-		//this.getMonthlyFoodAndGroceriesTextBox03().verifyInvisiblityIslocated();
-		this.getMonthlyFoodAndGroceriesTextBox03().enterTextField("20");
-//		genericMethodsCvp.implicitWait(2000);
-//		this.getMonthlyFoodAndGroceriesTextBox03().tab();
-		genericMethodsCvp.implicitWait(4000);
-		this.getFoodAndGroceriesMonthlyDrop03().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(4000);
-		//genericMethodsCvp.selectByText(FoodAndGroceriesMonthlyDrop03, "4 weekly");
-		//this.getMonthlyFoodAndGroceriesTextBox04().verifyInvisiblityIslocated();
-		this.getMonthlyFoodAndGroceriesTextBox04().enterTextField("148.33");
-//		genericMethodsCvp.implicitWait(2000);
-//		this.getMonthlyFoodAndGroceriesTextBox04().tab();
-		genericMethodsCvp.implicitWait(4000);
-		this.getFoodAndGroceriesMonthlyDrop04().selectFromDropdownByIndex(5);
-		genericMethodsCvp.implicitWait(4000);
-		//genericMethodsCvp.selectByText(FoodAndGroceriesMonthlyDrop04, "monthly");
-		//this.getClothingAndFootwearTextbox().verifyInvisiblityIslocated();
-		this.getClothingAndFootwearTextbox().enterTextField("60");
-//		this.getClothingAndFootwearTextbox().tab();
-		genericMethodsCvp.implicitWait(4000);
-		this.getClothingAndFootwearMonthlyDropdown().selectFromDropdownByIndex(4);
-		//genericMethodsCvp.selectByIndex(ClothingAndFootwearMonthlyDropdown, 4);
+		genericMethodsCvp.implicitWait(2000);
+	    this.getFoodAndGrocryAddAnoterButton01().click();
+
+		//Third Groceries @yakub
+		this.getMonthlyFoodAndGroceriesTextBox03().enterTextField("50");
 		genericMethodsCvp.implicitWait(5000);
+		this.getFoodAndGroceriesMonthlyDrop03().selectFromDropdownByIndex(3);
+		genericMethodsCvp.implicitWait(2000);
+		this.getFoodAndGrocryAddAnoterButton02().click();
+
+		//Fourth Groceries @yakub
+		this.getMonthlyFoodAndGroceriesTextBox04().enterTextField("99");
+		genericMethodsCvp.implicitWait(2000);
+		this.getFoodAndGroceriesMonthlyDrop04().selectFromDropdownByIndex(3);
+
+
+
+		this.getClothingAndFootwearTextbox().enterTextField("60");
+		genericMethodsCvp.implicitWait(5000);
+		this.getClothingAndFootwearMonthlyDropdown().selectFromDropdownByIndex(3);
+
 		this.getSchoolmealsRemoveButton().click();
 		this.getSchoolmealsRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getAlcoholRemoveButton().click();
 		this.getAlcoholRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getLaundryRemoveButton().click();
 		this.getLaundryRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getHouseholdMainRepairsRemoveButton().click();
 		this.getHouseholdMainRepairsRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getHomePhoneInternetTvPackageRemoveButton().click();
 		this.getHomePhoneInternetTvPackageRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getMobilePhoneRemoveButton().click();
 		this.getMobilePhoneRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getHobbiesLeisureSportRemoveButton().click();
 		this.getHobbiesLeisureSportRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getGiftsRemoveButton().click();
 		this.getGiftsRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getNewspapersMagazinesStationeryRemoveButton().click();
 		this.getNewspapersMagazinesStationeryRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getPocketMoneyRemoveButton().click();
 		this.getPocketMoneyRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getToiletriesRemoveButton().click();
 		this.getToiletriesRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getHairdressingRemoveButton().click();
 		this.getHairdressingRemoveButton().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(3000);
+
 		this.getAllFlexibleSpendingCompleted().click();
 		genericMethodsCvp.implicitWait(4000);
 		this.getContinueYourFlexibleSpendingButton().click();
@@ -1251,7 +1247,7 @@ public class YourSpendingFlexibleCost extends Control {
 
 		RemoveUnwantedOptionsFromFlexibleCostPagefor89949();
 		//EnterGroceries("200");
-		this.getMonthlyFoodAndGroceries().enterTextField("210");
+		this.getMonthlyFoodAndGroceries().enterTextField("200");
 		genericMethodsCvp.implicitWait(5000);
 		this.getFoodAndGroceriesmonthlyDrop().selectFromDropdownByIndex(5);
 
@@ -1270,9 +1266,6 @@ public class YourSpendingFlexibleCost extends Control {
 
 
 	public void RemoveUnwantedOptionsFromFlexibleCostPagefor89949() {
-
-
-		genericMethodsCvp.implicitWait(5000);
 		clickRemoveAlcoholButton();
 		genericMethodsCvp.implicitWait(5000);
 		clickRemoveLaundryAndDryCleaningButton();
@@ -1298,8 +1291,6 @@ public class YourSpendingFlexibleCost extends Control {
 		genericMethodsCvp.implicitWait(5000);
 		SelectReasoneForSpendSubmitButton();
 		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveHouseholdRepairMaintenance().click();
-//		genericMethodsCvp.implicitWait(5000);
 
 	}
 
@@ -1326,6 +1317,7 @@ public class YourSpendingFlexibleCost extends Control {
 
 	public void fillSpendingsFlexibleCost89924()
 	{
+
 		switchToActiveFrame();
 		genericMethodsCvp.implicitWait(2000);
         this.getMealsAtWorkRemoveButton().click();
@@ -1352,35 +1344,48 @@ public class YourSpendingFlexibleCost extends Control {
 		genericMethodsCvp.implicitWait(2000);
 		this.getHairdressingRemoveButton().click();
 		genericMethodsCvp.implicitWait(2000);
-        this.getMonthlyFoodAndGroceries().enterTextField("10");
+
+		//Groceries @yakub
+
+		this.getMonthlyFoodAndGroceriesTextBox01().verifyInvisiblityIslocated();
 		genericMethodsCvp.implicitWait(2000);
-		this.getFoodAndGroceriesmonthlyDrop().selectFromDropdownByIndex(4);
+		this.getMonthlyFoodAndGroceriesTextBox01().enterTextField("10");
+		genericMethodsCvp.implicitWait(5000);
+		this.getFoodAndGroceriesMonthlyDrop01().selectFromDropdownByIndex(3);
 		genericMethodsCvp.implicitWait(2000);
-		this.getGroceriesAnother().click();
+		this.getFoodAndGroceriesAnotherButton().click();
 		genericMethodsCvp.implicitWait(2000);
+
+		//Second Groceries @yakub
 		this.getMonthlyFoodAndGroceriesTextBox02().enterTextField("10");
+		genericMethodsCvp.implicitWait(5000);
+		this.getFoodAndGroceriesMonthlyDrop02().selectFromDropdownByIndex(3);
 		genericMethodsCvp.implicitWait(2000);
-		this.getFoodAndGroceriesMonthlyDrop02().selectFromDropdownByIndex(4);
+		this.getFoodAndGrocryAddAnoterButton01().click();
 		genericMethodsCvp.implicitWait(2000);
-		this.getGroceriesAnother2().click();
-		genericMethodsCvp.implicitWait(2000);
+
+		//Third Groceries @yakub
 		this.getMonthlyFoodAndGroceriesTextBox03().enterTextField("10");
+		genericMethodsCvp.implicitWait(5000);
+		this.getFoodAndGroceriesMonthlyDrop03().selectFromDropdownByIndex(3);
 		genericMethodsCvp.implicitWait(2000);
-		this.getFoodAndGroceriesMonthlyDrop03().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(2000);
-		this.getGroceriesAnother3().click();
-		genericMethodsCvp.implicitWait(2000);
-		this.getMonthlyFoodAndGroceriesTextBox04().enterTextField("10");
-		genericMethodsCvp.implicitWait(2000);
+		this.getFoodAndGrocryAddAnoterButton02().click();
+
+		//Fourth Groceries @yakub
+		this.getMonthlyFoodAndGroceriesTextBox04().enterTextField("99");
 		this.getFoodAndGroceriesMonthlyDrop04().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(2000);
-		this.getGroceriesAnother4().click();
-		this.getGroceries5().enterTextField("98.46");
+		this.getFoodAndGrocryAddAnoterButton03().click();
 		genericMethodsCvp.implicitWait(2000);
-		this.getGroceries5Frequency().selectFromDropdownByIndex(4);
+
+      //fifthGroceries
+		this.getMonthlyFoodAndGroceriesTextBox05().enterTextField("60");
 		genericMethodsCvp.implicitWait(2000);
-        this.getHomePhoneInternetTvPackageTextbox().enterTextField("52");
+		this.getFoodAndGroceriesMonthlyDrop05().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(2000);
+
+		//Rest of the Data
+		this.getHomePhoneInternetTvPackageTextbox().enterText("10");
 		this.getHomePhoneInternetTvPackageMonthlyDropdown().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(2000);
 		this.getHomePhonInternetTvPackageArrearsNoButton().click();

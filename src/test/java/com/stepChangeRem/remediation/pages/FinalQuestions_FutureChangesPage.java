@@ -22,9 +22,9 @@ public class FinalQuestions_FutureChangesPage extends Control{
 	public Checkbox getAllChangescaptureCheckboc89941(){return AllChangescaptureCheckboc89941;}
 	
 	public FinalQuestions_FutureChangesPage() {
-		AllChangeshavebeenCapturedCheckBox = new Checkbox(By.xpath("//label[text()='All changes have been captured']"));
+		AllChangeshavebeenCapturedCheckBox = new Checkbox(By.xpath("(//label[@class=' cb_standard'])[2]"));
 		FutureChangesPageContinueButton = new Button(By.xpath("//button[text()='Continue']"));
-		AllChangescaptureCheckboc89941=new Checkbox(By.xpath("//label[text()='All changes have been captured']"));
+		AllChangescaptureCheckboc89941=new Checkbox(By.xpath("//input[@id='6eadb5ad']"));
 	}
 
 	public void FutureChanges89941()
@@ -55,31 +55,7 @@ public class FinalQuestions_FutureChangesPage extends Control{
 		this.getFutureChangesPageContinueButton().click();
 
 	}
-
-	public void ClickFutureChangesPageContinueButton89940() {
-
-		genericMethodsCvp.implicitWait(5000);
-		this.getFutureChangesPageContinueButton().click();
-		genericMethodsCvp.implicitWait(5000);
-//		this.getAllChangescaptureCheckboc89941().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getFutureChangesPageContinueButton().click();
-
-	}
-
-	public void ClickFutureChangesPageContinueButton89930() {
-
-		genericMethodsCvp.implicitWait(5000);
-		this.getFutureChangesPageContinueButton().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getAllChangescaptureCheckboc89941().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getFutureChangesPageContinueButton().click();
-
-	}
-
-
-	public void ClickFutureChangesPageContinueButton89941() {
+	public void 	ClickFutureChangesPageContinueButton89941() {
 
 		//genericMethodsCvp.implicitWait(5000);
 		//this.getFutureChangesPageContinueButton().click();

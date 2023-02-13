@@ -9,32 +9,25 @@ import org.openqa.selenium.By;
 public class YourSpendingFixedCost extends Control {
 	GenericMethodsRemediation genericMethodsCvp = new GenericMethodsRemediation();
 	private Button removeDuelFuelButton;
+	private Button gasPrepayementNo;
+	private Button gasPrepayementNo2;
+	private Button gasPrepayementYes;
+	private Button gasPrepayementYes2;
+	private Button duelFuelPrepayementNo;
+	private Button duelFuelPrepayementYes;
+	private Button electricityPrepayementNo;
+	private Button electricityPrepayementNo2;
+	private Button electricityPrepayementYes;
+	private Button electricityPrepayementYes2;
+
+
+
 	private Button removeLifeInsuranceButton;
 	private Button removePublictransportButton;
 	private Button removeMedicineButton;
 	private Button removeDentistryButton;
 	private Button removeOpticiansButton;
-
-	private Button RemoveWaterSupply;
-
-	private Checkbox SomeoneElse;
-	private Button Submit;
-
-	private Button RemoveGas;
-	private Button RemoveElectricity;
-	private Button RemoveDualFuel;
-	private Button RemoveTVLicence;
-	private Button RemoveRates;
-
-
-
-
-
 	private Button electricityArrearYesButton;
-
-	private Dropdown ElectricitySupplierDropdown;
-
-	private Button ElectricityPrepaymentMeterButtonNo;
 	private Button electricityLinkedItem;
 	private TextField councileTax;
 	private Dropdown  councileMonthlyDrop;
@@ -47,24 +40,17 @@ public class YourSpendingFixedCost extends Control {
 	private TextField electricityUtility;
 	private Dropdown  electricityMonthlyDrop;
 	private Button electricityArrearButton;
-
+	private Dropdown electricitySupplier;
 
 	private TextField gasUtility;
 	private Dropdown  gasMonthlyDrop;
 	private Button gasArrearButton;
-	private TextField gasSupplier;
-	private Dropdown  GasSupplierDropDown;
-
-	private Button GasPrePaymentMeterButtonNo;
-
-
+	private Dropdown gasSupplier;
 
 	private TextField waterSupplyUtility;
 	private Dropdown  waterSupplyMonthlyDrop;
-
-	private Dropdown WaterSupplySupplierDropDown;
 	private Button waterSupplyArrearButton;
-	private TextField waterSupplySupplier;
+	private Dropdown waterSupplySupplier;
 
 
 
@@ -85,11 +71,7 @@ public class YourSpendingFixedCost extends Control {
 	private Button RentArrearsNoButton;
 
 	private TextField SchoolUniform;
-
-	private Button SchoolUniformButton;
 	private Dropdown SchoolUniformMonthly;
-
-	private Dropdown SchoolUniformOwner;
 	private Button SchoolUniformArrearsNoButton;
 
 	private TextField ChildcareTectBox;
@@ -116,11 +98,7 @@ public class YourSpendingFixedCost extends Control {
 	private TextField MOTAndOngoing1;
 	private Dropdown  MOTAndOngoingMonthlyDrop1;
 	private TextField Board;
-
-	private Button BoardButton;
 	private Dropdown BoardDrop;
-
-	private Dropdown OwnerBoard;
 	private Button BoardArrearNoButton;
 	private TextField RoadTax1;
 	private Dropdown RoadTaxMonthlyDrop1;
@@ -168,41 +146,6 @@ public class YourSpendingFixedCost extends Control {
 	private Button LinkspopupSubmitButton;
     private Button BritishGasFirstOptionClick;
 
-
-	private Button getRemoveWaterSupply() {
-		return RemoveWaterSupply;
-	}
-
-	private Checkbox getSomeoneElse() {
-		return SomeoneElse;
-	}
-
-	private Button getSubmit() {
-		return Submit;
-	}
-
-
-	private Button getRemoveGas() {
-		return RemoveGas;
-	}
-	private Button getRemoveElectricity() {
-		return RemoveElectricity;
-	}
-	private Button getRemoveDualFuel() {
-		return RemoveGas;
-	}
-	private Button getRemoveTVLicence() {
-		return RemoveTVLicence;
-	}
-	private Button getRemoveRates() {
-		return RemoveRates;
-	}
-
-
-
-
-
-
 	public Button getFlexiblecostlink() {
 		return Flexiblecostlink;
 	}
@@ -219,22 +162,9 @@ public class YourSpendingFixedCost extends Control {
 	public TextField getSchoolUniform() {
 		return SchoolUniform;
 	}
-
-	public Button getSchoolUniformButton() {
-		return SchoolUniformButton;
-	}
-
-
 	public Dropdown getSchoolUniformMonthly() {
 		return SchoolUniformMonthly;
 	}
-
-	public Dropdown getSchoolUniformOwner() {
-		return SchoolUniformOwner;
-	}
-
-
-
 	private Button getSchoolUniformArrearsNoButton() {
 		return SchoolUniformArrearsNoButton;
 	}
@@ -304,6 +234,7 @@ public class YourSpendingFixedCost extends Control {
 		return tvArrearButton;
 	}
 
+
 	public TextField getElectricityUtility() {
 		return electricityUtility;
 	}
@@ -313,18 +244,21 @@ public class YourSpendingFixedCost extends Control {
 	public Button getElectricityArrearButton() {
 		return electricityArrearButton;
 	}
+	public Button getElectrictyPrepaymentNoButton() {
+		return electricityPrepayementNo;
+	}
+	public Button getElectrictyPrepaymentNoButton2() {
+		return electricityPrepayementNo2;
+	}
+	public Button getElectrictyPrepaymentYesButton() {
+		return electricityPrepayementYes;
+	}
+	public Dropdown getElectricitySupplier() {
+		return electricitySupplier;
+	}
+
 	public Button getelectricityArrearYesButton() {
 		return electricityArrearYesButton;
-	}
-
-	public Dropdown getElectricitySupplierDropdown(){
-
-		return ElectricitySupplierDropdown;
-	}
-
-	public Button getElectricityPrepaymentMeterButtonNo() {
-
-		return ElectricityPrepaymentMeterButtonNo;
 	}
 	public Button getelectricityLinkedItem() {
 		return electricityLinkedItem;
@@ -339,18 +273,16 @@ public class YourSpendingFixedCost extends Control {
 	public Button getGasArrearButton() {
 		return gasArrearButton;
 	}
-
-	public Dropdown getGasSupplierDropDown(){
-
-		return GasSupplierDropDown;
+	public Button getGasPrepaymentNoButton() {
+		return gasPrepayementNo;
 	}
-
-	public Button getGasPrePaymentMeterButtonNo(){
-
-		return GasPrePaymentMeterButtonNo;
+	public Button getGasPrepaymentNoButton2() {
+		return gasPrepayementNo2;
 	}
-
-	public TextField getGasSupplier() {
+	public Button getGasPrepaymentYesButton() {
+		return gasPrepayementYes;
+	}
+	public Dropdown getGasSupplier() {
 		return gasSupplier;
 	}
 
@@ -360,15 +292,10 @@ public class YourSpendingFixedCost extends Control {
 	public Dropdown getWaterSupplyMonthlyDrop() {
 		return waterSupplyMonthlyDrop;
 	}
-
-	public Dropdown getWaterSupplySupplierDropDown() {
-		return WaterSupplySupplierDropDown;
-	}
-
 	public Button getWaterSupplyArrearButton() {
 		return waterSupplyArrearButton;
 	}
-	public TextField getWaterSupplySupplier() {
+	public Dropdown getWaterSupplySupplier() {
 		return waterSupplySupplier;
 	}
 
@@ -420,11 +347,7 @@ public class YourSpendingFixedCost extends Control {
 	}
 
 	public TextField getBoard() {return Board;}
-
-	public Button getBoardButton() {return BoardButton ;}
 	public Dropdown  getBoardDrop() {return BoardDrop;}
-
-	public Dropdown  getOwnerBoard() {return OwnerBoard;}
 	public Button getBoardArrearNoButton() {return BoardArrearNoButton;}
 
 	public TextField getBuildingsAndcontentInsurance() {return BuildingsAndcontentInsurance;}
@@ -523,18 +446,6 @@ public class YourSpendingFixedCost extends Control {
 		publicTransportMonthlyDrop = new Dropdown (By.xpath("//div[text()='Public transport']//following::select[1]"));
 
 
-		RemoveWaterSupply = new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[16]"));
-		SomeoneElse=new Checkbox(By.xpath("//label[text()='Someone else pays for this']"));
-		Submit=new Button(By.xpath("//button[text()='Submit']"));
-		RemoveGas = new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[15]"));
-		RemoveElectricity = new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[14]"));
-		RemoveDualFuel = new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[13]"));
-		RemoveTVLicence = new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[2]"));
-		RemoveRates = new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[1]"));
-
-
-
-
 
 		LinkspopupAddDebt=new Button(By.xpath("//button[text()='Debt']"));
 		LinkspopupWhoisTheCreditor=new AutoComplete(By.xpath("//label[text()='Who is the creditor?']//following::input[1]"));
@@ -568,10 +479,8 @@ public class YourSpendingFixedCost extends Control {
 		RatesMonthlyDrop = new Dropdown (By.xpath("//div[text()='Rates']//following::select[1]"));
 		RatesArrearNoButton = new Button(By.xpath("//div[text()='Rates']//following::label[4]"));
 
-		BoardButton= new Button(By.xpath("(//button[@class='SC_Tag_Small pzhc pzbutton'])[4]"));
 		Board=new TextField(By.xpath("//div[text()='Board']//following::input[2]"));
-		BoardDrop = new Dropdown (By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l1$ppxResults$l1$pFrequency']"));
-		OwnerBoard=new Dropdown(By.xpath("//div[text()='Board']//following::select[2]"));
+		BoardDrop = new Dropdown (By.xpath("//div[text()='Board']//following::select[1]"));
 		BoardArrearNoButton= new Button(By.xpath("//div[text()='Board']//following::label[4]"));
 
 		CarInsurance1=new TextField(By.xpath("//div[text()='Car insurance 1']//following::input[2]"));
@@ -593,6 +502,8 @@ public class YourSpendingFixedCost extends Control {
 
 		Fuel2=new TextField(By.xpath("//div[text()='Fuel, parking and toll road charges 2']//following::input[2]"));
 		FuelMonthlyDrop2= new Dropdown (By.xpath("//div[text()='Fuel, parking and toll road charges 2']//following::select[1]"));
+        duelFuelPrepayementNo= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='No'])[12]"));
+		duelFuelPrepayementYes= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='Yes'])[12]"));
 
 		BreakDown1=new TextField(By.xpath("//div[text()='Breakdown cover 1']//following::input[2]"));
 		BreakDownMonthlyDrop1= new Dropdown (By.xpath("//div[text()='Breakdown cover 1']//following::select[1]"));
@@ -623,23 +534,27 @@ public class YourSpendingFixedCost extends Control {
 		electricityMonthlyDrop = new Dropdown (By.xpath("//div[text()='Electricity']//following::select[1]"));
 		electricityArrearButton = new Button(By.xpath("//div[text()='Electricity']//following::label[4]"));
 		electricityArrearYesButton = new Button(By.xpath("//div[text()='Electricity']//following::label[3]"));
-		ElectricitySupplierDropdown=new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l2$pCaptureUtilityProvider']"));
-		ElectricityPrepaymentMeterButtonNo = new Button(By.xpath("//div[text()='Electricity']//following::label[8]"));
 		electricityLinkedItem=new Button(By.xpath("//div[text()='Electricity']//following::button[text()='Add linked item']"));
-
+		electricitySupplier  = new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l2$pCaptureUtilityProvider']"));
+		electricityPrepayementNo= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='No'])[14]"));
+		electricityPrepayementNo2= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='No'])[12]"));
+		electricityPrepayementYes= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='Yes'])[14]"));
+		electricityPrepayementYes= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='Yes'])[12]"));
 
 		gasUtility = new TextField(By.xpath("//div[text()='Gas']//following::input[2]"));
 		gasMonthlyDrop = new Dropdown (By.xpath("//div[text()='Gas']//following::select[1]"));
 		gasArrearButton = new Button(By.xpath("//div[text()='Gas']//following::label[4]"));
-		GasSupplierDropDown= new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l3$pCaptureUtilityProvider']"));
-		GasPrePaymentMeterButtonNo=new Button(By.xpath("//div[text()='Gas']//following::label[8]"));
-		gasSupplier  = new TextField(By.xpath(""));
+		gasSupplier  = new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l3$pCaptureUtilityProvider']"));
+		gasPrepayementNo= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='No'])[16]"));
+		gasPrepayementYes= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='Yes'])[16]"));
+		gasPrepayementNo2= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='No'])[14]"));
+		gasPrepayementYes2= new Button(By.xpath("(//label[@class='rb_segmented rb_standard radioLabel' and text()='Yes'])[14]"));
 
 		waterSupplyUtility = new TextField(By.xpath("//div[text()='Water supply']//following::input[2]"));
-		waterSupplyMonthlyDrop = new Dropdown (By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l4$pFrequency']"));
-		WaterSupplySupplierDropDown=new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l4$pCaptureUtilityProvider']"));
+		waterSupplyMonthlyDrop = new Dropdown (By.xpath("//div[text()='Water supply']//following::select[1]"));
+		//waterSupplyArrearButton = new Button(By.xpath("//div[text()='Water supply']//following::label[4]"));
 		waterSupplyArrearButton = new Button(By.xpath("//div[text()='Water supply']//following::label[4]"));
-		waterSupplySupplier  = new TextField(By.xpath(""));
+		waterSupplySupplier  = new Dropdown(By.xpath("//select[@name='$PD_ExpenditureCategoryList$ppxResults$l2$ppxResults$l4$pCaptureUtilityProvider']"));
 
 		billingAndInsurance = new TextField(By.xpath("//div[text()='Buildings and contents insurance']//following::input[2]"));
 		billingAndInsuranceMonthlyDrop = new Dropdown (By.xpath("//div[text()='Buildings and contents insurance']//following::select[1]"));
@@ -661,10 +576,8 @@ public class YourSpendingFixedCost extends Control {
 		RentMonthly = new Dropdown (By.xpath("//div[text()='Rent']//following::select[1]"));
 		RentArrearsNoButton = new Button(By.xpath("//div[text()='Rent']//following::label[4]"));
 
-		SchoolUniformButton=new Button(By.xpath("(//button[@class='SC_Tag_Small pzhc pzbutton'])[40]"));
 		SchoolUniform = new TextField(By.xpath("//div[text()='School uniform']//following::input[2]"));
 		SchoolUniformMonthly = new Dropdown (By.xpath("//div[text()='School uniform']//following::select[1]"));
-		SchoolUniformOwner=new Dropdown(By.xpath("//div[text()='School uniform']//following::select[2]"));
 
 		ChildcareTectBox= new TextField(By.xpath("//div[text()='Childcare']//following::input[2]"));
 		ChildcareDropdownMonthly = new Dropdown (By.xpath("//div[text()='Childcare']//following::select[1]"));
@@ -701,7 +614,6 @@ public class YourSpendingFixedCost extends Control {
 	public void RemovePublictransportButton(){this.getRemovePublictransportButton().click();}
 
 
-
 	public void FillRequiredDetailsOf89929() {
 		switchToActiveFrame();
 //		removeDuelFuleBtn();
@@ -728,7 +640,7 @@ public class YourSpendingFixedCost extends Control {
 		this.getpublicTransport().enterText("200");
 		this.getpublicTransport().tab();
 		this.getpublicTransportMonthlyDrop().selectFromDropdownByIndex(4);
-		//
+		//Council tax
 //		genericMethodsCvp.selectByIndex(councileMonthlyDrop, 4);
 //		this.getCouncileArrearButton().click();
 //		this.getTvLicence().enterText("13.12");
@@ -789,69 +701,65 @@ public class YourSpendingFixedCost extends Control {
 		genericMethodsCvp.implicitWait(5000);
 		this.getRemoveOpticiansButton().click();
 		genericMethodsCvp.implicitWait(5000);
-
-
 		this.getRates().enterTextField("200");
 		genericMethodsCvp.implicitWait(5000);
 		this.getRatesMonthlyDrop().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(5000);
 		this.getRatesArrearButton().click();
 		genericMethodsCvp.implicitWait(5000);
-
-
 		this.getTvLicence().enterTextField("13.12");
 		genericMethodsCvp.implicitWait(6000);
 		genericMethodsCvp.selectByIndex(this.getTvMonthlyDrop(),3);
 		genericMethodsCvp.implicitWait(5000);
+//			genericMethodsCvp.selectByIndex(this.getTvMonthlyDrop(),3);
+//			genericMethodsCvp.implicitWait(5000);
 		this.getTvArrearButton().click();
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(3000);
 
-
+		//Electricity
 		this.getElectricityUtility().enterTextField("100");
 		genericMethodsCvp.implicitWait(5000);
 		this.getElectricityMonthlyDrop().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(5000);
 		this.getelectricityArrearYesButton().click();
 		genericMethodsCvp.implicitWait(3000);
-		this.getElectricitySupplierDropdown().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(3000);
-		this.getElectricityPrepaymentMeterButtonNo().click();
-		genericMethodsCvp.implicitWait(3000);
+         this.getElectricitySupplier().selectFromDropdownByText("British Gas");
+	     getBrowser().sleep(3000);
+		this.getElectrictyPrepaymentNoButton2().click();
 
-
+		//Gas
 		this.getGasUtility().enterTextField("100");
 		genericMethodsCvp.implicitWait(3000);
 		this.getGasMonthlyDrop().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(3000);
 		this.getGasArrearButton().click();
 		genericMethodsCvp.implicitWait(3000);
-		this.getGasSupplierDropDown().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(3000);
-		this.getGasPrePaymentMeterButtonNo().click();
+		this.getGasSupplier().selectFromDropdownByText("British Gas");
+		getBrowser().sleep(3000);
+		this.getGasPrepaymentNoButton2().click();
+		getBrowser().sleep(3000);
 
+		//WaterSupply
+		switchToActiveFrame();
 		this.getWaterSupplyUtility().enterTextField("100");
 		genericMethodsCvp.implicitWait(3000);
 		this.getWaterSupplyMonthlyDrop().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(3000);
+		getBrowser().sleep(3000);
 //		this.getWaterSupplyArrearButton().click();
-		this.getWaterSupplySupplierDropDown().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(3000);
+//		genericMethodsCvp.implicitWait(3000);
+		this.getWaterSupplySupplier().selectFromDropdownByText("Bristol Water");
 
-
-
+		//Building
 		this.getBuildingsAndcontentInsurance().enterTextField("171.06");
 		genericMethodsCvp.implicitWait(3000);
 		this.getBuildingsAndContentInsuranceMonthlyDrop().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(3000);
 		this.getBuildingsAndContentInsuranceNoArrearButton().click();
 		genericMethodsCvp.implicitWait(3000);
-
-
 		this.getAllFixedSpendingCompleted().click();
-		genericMethodsCvp.implicitWait(4000);
-
+		genericMethodsCvp.implicitWait(3000);
 		this.getelectricityLinkedItem().click();
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(3000);
 		this.getLinkspopupAddDebt().click();
 		genericMethodsCvp.implicitWait(3000);
 		this.getLinkspopupWhoisTheCreditorMPA().enterTextField("British Gas");
@@ -937,7 +845,7 @@ public class YourSpendingFixedCost extends Control {
 		genericMethodsCvp.selectByText(gasMonthlyDrop, "monthly");
 	}
 	public void EnterGasSuplyer()	{
-		this.getGasSupplier().enterText("British Gas");
+		this.getGasSupplier().selectFromDropdownByText("British Gas");
 	}
 
 	public void EnterWaterBil(String data)	{
@@ -951,8 +859,8 @@ public class YourSpendingFixedCost extends Control {
 		genericMethodsCvp.implicitWait(3000);
 		genericMethodsCvp.selectByText(waterSupplyMonthlyDrop, "monthly");
 	}
-	public void EnterWaterSuplyer()	{
-		this.getWaterSupplySupplier().enterText("Welsh Water");
+	public Dropdown EnterWaterSuplyer()	{
+		return this.getWaterSupplySupplier();
 	}
 
 	public void EnterBillingAndInsurance(String data)	{
@@ -1056,40 +964,31 @@ public class YourSpendingFixedCost extends Control {
 		  // (new WebDriverWait(getDriver(),30)).until(ExpectedConditions.elementToBeClickable(getChildcareButton_89940().getSelector()));
 		   //this.getChildcareButton_89940().click();
 		    getBrowser().sleep(getBrowser().getTimeout()/10);
-//		    this.getCouncileTax().enterTextField("100");
-//		    getBrowser().sleep(getBrowser().getTimeout()/10);
-
+		    this.getCouncileTax().enterTextField("100");
+		    getBrowser().sleep(getBrowser().getTimeout()/10);
 		    this.getRent().enterTextField("251.96");
 		    getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getRentMonthly().selectFromDropdownByIndex(4);
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getRentArrearsNoButton().click();
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-
 			this.getCouncileTax().enterTextField("100");
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getCouncileMonthlyDrop().selectFromDropdownByIndex(4);
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getCouncileArrearButton().click();
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-
 			this.getTvLicence().enterTextField("13.12");
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getTvMonthlyDrop().selectFromDropdownByIndex(4);
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getTvArrearButton().click();
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-
 			this.getElectricityUtility().enterTextField("50");
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getElectricityMonthlyDrop().selectFromDropdownByIndex(4);
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getElectricityArrearButton().click();
-		    getBrowser().sleep(getBrowser().getTimeout()/10);
-           this.getElectricitySupplierDropdown().selectFromDropdownByIndex(4);
-		   getBrowser().sleep(getBrowser().getTimeout()/10);
-		   this.getElectricityPrepaymentMeterButtonNo().click();
-
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getGasUtility().enterTextField("50");
 			getBrowser().sleep(getBrowser().getTimeout()/10);
@@ -1097,19 +996,12 @@ public class YourSpendingFixedCost extends Control {
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getGasArrearButton().click();
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-			this.getGasSupplierDropDown().selectFromDropdownByIndex(4);
-		    getBrowser().sleep(getBrowser().getTimeout()/10);
-			this.getGasPrePaymentMeterButtonNo().click();
-		    getBrowser().sleep(getBrowser().getTimeout()/10);
-
 			this.getWaterSupplyUtility().enterTextField("50");
 			getBrowser().sleep(getBrowser().getTimeout()/20);
 			this.getWaterSupplyMonthlyDrop().selectFromDropdownByIndex(4);
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-//			this.getWaterSupplyArrearButton().click();
-		    this.getWaterSupplySupplierDropDown().selectFromDropdownByIndex(6);
+			this.getWaterSupplyArrearButton().click();
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-
 			this.getBillingAndInsurance().enterTextField("2");
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getBillingAndInsuranceMonthlyDrop().selectFromDropdownByIndex(4);
@@ -1122,16 +1014,10 @@ public class YourSpendingFixedCost extends Control {
 			//getBrowser().sleep(getBrowser().getTimeout()/10);
 			//this.getChildcareArrearsNoButton().click();
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-
-			this.getSchoolUniformButton().click();
-		    getBrowser().sleep(getBrowser().getTimeout()/10);
-		    this.getSchoolUniform().enterTextField("20");
+			this.getSchoolUniform().enterTextField("20");
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getSchoolUniformMonthly().selectFromDropdownByIndex(4);
 			getBrowser().sleep(getBrowser().getTimeout()/10);
-			this.getSchoolUniformOwner().selectFromDropdownByIndex(3);
-
-
 			this.getAllFixedSpendingCompleted().click();
 			getBrowser().sleep(getBrowser().getTimeout()/10);
 			this.getContinueYourFixedSpendingButton().click();
@@ -1266,7 +1152,7 @@ public class YourSpendingFixedCost extends Control {
 //		this.getFlexiblecostlink().click();
 //	}
 
-	public void YourSpendingFixdCostActionSet_SC89934() {
+	public void 	YourSpendingFixdCostActionSet_SC89934() {
 		//Rent
 		genericMethodsCvp.implicitWait(4000);
 		this.getRent().enterText("526.95");
@@ -1293,11 +1179,16 @@ public class YourSpendingFixedCost extends Control {
 		//genericMethodsCvp.selectByIndex(tvMonthlyDrop, 3);
 		genericMethodsCvp.implicitWait(2000);
 		//Electricity
+		switchToActiveFrame();
 		this.getElectricityUtility().enterText("50");
 		this.getElectricityUtility().tab();
 		this.getElectricityArrearButton().click();
 		genericMethodsCvp.implicitWait(2000);
 		this.getElectricityMonthlyDrop().selectFromDropdownByIndex(4);
+		genericMethodsCvp.implicitWait(2000);
+		genericMethodsCvp.selectByIndex(electricitySupplier,4);
+		genericMethodsCvp.implicitWait(2000);
+		this.getElectrictyPrepaymentNoButton().click();
 		//genericMethodsCvp.selectByIndex(electricityMonthlyDrop, 4);
 		genericMethodsCvp.implicitWait(1000);
 		//Gas
@@ -1306,18 +1197,25 @@ public class YourSpendingFixedCost extends Control {
 		this.getGasArrearButton().click();
 		genericMethodsCvp.implicitWait(2000);
 		this.getGasMonthlyDrop().selectFromDropdownByIndex(4);
+		genericMethodsCvp.implicitWait(2000);
+		genericMethodsCvp.selectByIndex(gasSupplier,4);
+		genericMethodsCvp.implicitWait(2000);
+		this.getGasPrepaymentNoButton().click();
 		//genericMethodsCvp.selectByIndex(gasMonthlyDrop, 4);
 		genericMethodsCvp.implicitWait(1000);
 		//Water Supply
 		this.getWaterSupplyUtility().enterText("50");
 		this.getWaterSupplyUtility().tab();
-		this.getWaterSupplyArrearButton().click();
+		//this.getWaterSupplyArrearButton().click();
 		genericMethodsCvp.implicitWait(2000);
 		this.waterSupplyMonthlyDrop.selectFromDropdownByIndex(4);
+		genericMethodsCvp.implicitWait(2000);
+		genericMethodsCvp.selectByIndex(waterSupplySupplier,4);
+
 		//genericMethodsCvp.selectByIndex(waterSupplyMonthlyDrop, 4);
 		genericMethodsCvp.implicitWait(1000);
 		//Building and..
-		this.getBillingAndInsurance().enterText("20");
+		this.getBillingAndInsurance().enterText("60");
 		this.getBillingAndInsurance().tab();
 		this.getBillingAndInsuranceArrearButton().click();
 		genericMethodsCvp.implicitWait(2000);
@@ -1414,56 +1312,17 @@ public class YourSpendingFixedCost extends Control {
 		genericMethodsCvp.implicitWait(5000);
 		removeOpticians();
 		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveWaterSupply().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSomeoneElse().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSubmit().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveGas().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveElectricity().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSomeoneElse().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSubmit().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveDuelFuelButton().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveTVLicence().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSomeoneElse().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSubmit().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getRemoveRates().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSomeoneElse().click();
-//		genericMethodsCvp.implicitWait(5000);
-//		this.getSubmit().click();
-
-
-
-
-
-
-
-
 
 		getBrowser().sleep(getBrowser().getTimeout());
-//		this.getBoardButton().click();
-		genericMethodsCvp.implicitWait(5000);
 		this.getBoard().enterText("930");
 		genericMethodsCvp.implicitWait(5000);
 		this.getBoardDrop().selectFromDropdownByIndex(4);
-//		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(5000);
 		//genericMethodsCvp.selectByIndex(BoardMonthly, 4);
-//		this.getOwnerBoard().selectFromDropdownByIndex(3);
 		genericMethodsCvp.implicitWait(3000);
 		this.getBoardArrearNoButton().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		this.getAllFixedSpendingCompleted().click();
-		genericMethodsCvp.implicitWait(5000);
 		this.getContinueYourFixedSpendingButton().click();
 	}
 
@@ -1472,129 +1331,108 @@ public class YourSpendingFixedCost extends Control {
     public void enterDataAsPer89939() {
 		genericMethodsCvp.implicitWait(5000);
 		EnterRent("736.88");
-//		getRent().tab();
-		genericMethodsCvp.implicitWait(5000);
+		getRent().tab();
+		genericMethodsCvp.implicitWait(3000);
 		this.getRentMonthly().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		ClickOnNoButtonForRentArrear();
-		genericMethodsCvp.implicitWait(5000);
-
+		genericMethodsCvp.implicitWait(3000);
 		EnterCouncilTax("95");
-//		getCouncileTax().tab();
-		genericMethodsCvp.implicitWait(5000);
+		getCouncileTax().tab();
+		genericMethodsCvp.implicitWait(3000);
 		this.getCouncileMonthlyDrop().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		ClickOnNoButtonForCouncileArrear();
-		genericMethodsCvp.implicitWait(5000);
-
+		genericMethodsCvp.implicitWait(3000);
 		EnterTvLicence("13.12");
 		getTvLicence().tab();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 //		SelectTvLicenceMonthlyDropdown();
 		this.getTvMonthlyDrop().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		ClickOnNoButtonForTvLicenceArrear();
-		genericMethodsCvp.implicitWait(5000);
-
+		genericMethodsCvp.implicitWait(3000);
 		EnterElectricityBil("50");
-//		getElectricityUtility().tab();
-		genericMethodsCvp.implicitWait(5000);
+		getElectricityUtility().tab();
+		genericMethodsCvp.implicitWait(3000);
 		getElectricityMonthlyDrop().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getelectricityArrearYesButton().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getelectricityLinkedItem().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getLinkspopupAddDebt().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(8000);
 		genericMethodsCvp.scrollIntoViewElement(By.xpath("//label[text()='Who is the creditor?']//following::input[1]"));
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getLinkspopupWhoisTheCreditor().enterTextThenSelectFromAutoComplete("British Gas");
-		this.enter();
-//		genericMethodsCvp.verifyOverLayDisplayed();
-//		getLinkspopupWhoisTheCreditor().downArrow();
-//		getLinkspopupWhoisTheCreditor().enter();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.verifyOverLayDisplayed();
+		getLinkspopupWhoisTheCreditor().downArrow();
+		getLinkspopupWhoisTheCreditor().enter();
+		genericMethodsCvp.implicitWait(3000);
 		getLinkspopupWhoisLiablefortheDebt().selectFromDropdownByIndex(1);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getLinkspopupHowmuchisOwned().enterText("100");
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getlinksPopUpActionTakenByCreditorCourtAction().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getlinksPopUpActionTakenByCreditorCourtActionEnforcement().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getLinksPopUpActionTakenByCreditorCourtActionEnforcementAttachDmentOfEarnings().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		genericMethodsCvp.scrollIntoViewElement(By.xpath("(//div[text()='How much are they repaying towards this?'])//following::input[1]"));
 		getlinksPopUpHowMuchRepaying().enterText("10");
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getlinksPopUpHowMuchRepayingDropdown().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getLinkspopupSubmitButton().click();
-		genericMethodsCvp.implicitWait(5000);
-		this.getElectricitySupplierDropdown().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
-		this. getElectricityPrepaymentMeterButtonNo().click();
-		genericMethodsCvp.implicitWait(5000);
-
-
+		genericMethodsCvp.implicitWait(3000);
 		EnterGasBil("50");
-//		getGasUtility().tab();
-		genericMethodsCvp.implicitWait(5000);
+		getGasUtility().tab();
+		genericMethodsCvp.implicitWait(3000);
 		getGasMonthlyDrop().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		SelectNoButtonForGasArrear();
-		genericMethodsCvp.implicitWait(5000);
-		this.getGasSupplierDropDown().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
-		getGasPrePaymentMeterButtonNo().click();
-		genericMethodsCvp.implicitWait(5000);
-
-
+		genericMethodsCvp.implicitWait(3000);
 		EnterWaterBil("50");
-//		getWaterSupplyUtility().tab();
-		genericMethodsCvp.implicitWait(5000);
-		this.getWaterSupplyMonthlyDrop().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
-//		getWaterSupplyArrearButton().click();
-//		genericMethodsCvp.implicitWait(5000);
-		getWaterSupplySupplierDropDown().selectFromDropdownByIndex(6);
-		genericMethodsCvp.implicitWait(5000);
-
-
-
+		getWaterSupplyUtility().tab();
+		genericMethodsCvp.implicitWait(3000);
+		getWaterSupplyMonthlyDrop().selectFromDropdownByIndex(4);
+		genericMethodsCvp.implicitWait(3000);
+		getWaterSupplyArrearButton().click();
+		genericMethodsCvp.implicitWait(3000);
 		getBuildingsAndcontentInsurance().enterText("20");
-//		getBuildingsAndcontentInsurance().tab();
-		genericMethodsCvp.implicitWait(5000);
+		getBuildingsAndcontentInsurance().tab();
+		genericMethodsCvp.implicitWait(3000);
 		getBuildingsAndContentInsuranceMonthlyDrop().selectFromDropdownByIndex(4);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getBuildingsAndContentInsuranceNoArrearButton().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		removeDuelFuleBtn();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		removeLifeInsuranceBtn();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		removePublictransportBtn();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		removeMedicineBtn();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		removeDentistryBtn();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		removeOpticians();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		genericMethodsCvp.scrollIntoViewElement(By.xpath("//label[normalize-space()='All fixed spending items are complete']"));
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		getAllFixedSpendingCompleted().click();
 		getBrowser().sleep(getBrowser().getTimeout() / 10);
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getContinueYourFixedSpendingButton().click();
-		genericMethodsCvp.implicitWait(5000);
+		genericMethodsCvp.implicitWait(3000);
 		getBrowser().sleep(5000);
 	}
 }

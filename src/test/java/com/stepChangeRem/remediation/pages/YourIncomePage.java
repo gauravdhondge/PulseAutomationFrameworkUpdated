@@ -322,54 +322,15 @@ public class YourIncomePage<RemovePrivatePension2> extends Control {
 		return JSSharedContributionBasedDropDwn;
 	}
 
-
 	private TextField Studentloans1;
-
-	private Button StudentLoan;
-
-	private Button RemoveStatePension;
-
-	private Button RemoveStudentgrant1;
-
-	private Button RemoveStudentgrant2;
-	private Button RemovePrivatePension1;
-	private Button RemoveWorkPension2;
-
-	private Button RemovePensionCredit89949;
-
-
-
-
-	private Dropdown OwnerClient1;
-
-	private Dropdown OwnerClient2;
 	private TextField Studentloans2;
 	private Button Studentgrant1button;
 	private Button Studentgrant2button;
 	private Dropdown Studentloans1Dropdown1;
 	private Dropdown Studentloans1Dropdown2;
 
-
-	public Button getRemoveStatePension() {	return RemoveStatePension;}
-
-	public Button getRemoveStudentgrant1() {	return RemoveStudentgrant1;}
-
-	public Button getRemoveStudentgrant2() {	return RemoveStudentgrant2;}
-
-
-	public Button getRemovePrivatePension1() {	return RemovePrivatePension1;}
-
-	public Button getRemoveWorkPension2() {	return RemoveWorkPension2;}
-
-	public Button getRemovePensionCredit89949() {	return RemovePensionCredit89949;}
-
-	public Button getStudentLoan() {	return StudentLoan;}
-
 	public Dropdown getStudentloans1Dropdown1() {	return Studentloans1Dropdown1;}
 	public Dropdown getStudentloans1Dropdown2() {	return Studentloans1Dropdown2;}
-	public Dropdown getOwnerClient1() {	return OwnerClient1;}
-	public Dropdown getOwnerClient2() {	return OwnerClient2;}
-
 	public TextField getStudentloans1() {return Studentloans1;}
 	public TextField getStudentloans2() {	return Studentloans2;}
 	public Button getStudentgrant1button() {	return Studentgrant1button;}
@@ -481,21 +442,11 @@ public class YourIncomePage<RemovePrivatePension2> extends Control {
 		JSContributionBasedDropDwn = new Dropdown(By.xpath("(//div[contains(text(),'contribution')]//following::select)[1]"));
 		JSSharedContributionBasedDropDwn= new Dropdown(By.xpath("(//div[contains(text(),'contribution')]//following::select)[2]"));
 
-
-		RemoveStudentgrant2=new Button(By.xpath("(//div[text()='Student grant/bursary'])[2]//following::button[3]"));
-		RemoveStudentgrant1=new Button(By.xpath("(//div[text()='Student grant/bursary'])[1]//following::button[3]"));
-		RemoveStatePension=new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[17]"));
-		RemovePrivatePension1=new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[18]"));
-		RemoveWorkPension2=new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[19]"));
-		RemovePensionCredit89949=new Button(By.xpath("(//button[@class='SC_Button_Quinary pzhc pzbutton'])[20]"));
-		StudentLoan=new Button(By.xpath("(//button[@class='SC_Tag_Small pzhc pzbutton'])[24]"));
 		Studentloans1 = new TextField(By.xpath("(//div[text()='Student loans']//following::input[2])[1]"));
 		Studentloans2= new TextField(By.xpath("(//div[text()='Student loans']//following::input[2])[2]"));
 		Studentgrant1button= new Button(By.xpath("(//div[text()='Student grant/bursary']//following::button[3])[1]"));
 		Studentgrant2button= new Button(By.xpath("(//div[text()='Student grant/bursary']//following::button[3])[2]"));
 		Studentloans1Dropdown1 =new Dropdown(By.xpath("(//div[text()='Student loans']//following::select[1])[1]"));
-		OwnerClient1=new Dropdown(By.xpath("//select[contains(@name,'$ppxResults$l27$pOwnership$pCode')]"));
-		OwnerClient2=new Dropdown(By.xpath("//select[contains(@name,'$ppxResults$l28$pOwnership$pCode')]"));
 		Studentloans1Dropdown2=new Dropdown(By.xpath("(//div[text()='Student loans']//following::select[1])[2]"));
 		wagsEarningButton= new Button(By.xpath("//button[normalize-space()='wage']"));
 	}
@@ -519,7 +470,7 @@ public class YourIncomePage<RemovePrivatePension2> extends Control {
 		//getBrowser().sleep(getBrowser().getTimeout()/10);
 		//this.getJSAContributionTextBox89934().clear();
 		this.getJSAContributionTextBox89934().enterText("146.20");
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(3000);
 		genericMethodsCvp.selectByIndex(JSAContributionDrop89934, 2);
 		//genericMethodsCvp.selectByText(fortnightlyDropDown, "fortnighlty");
 		genericMethodsCvp.implicitWait(5000);
@@ -624,8 +575,8 @@ public class YourIncomePage<RemovePrivatePension2> extends Control {
 		genericMethodsCvp.implicitWait(10000);
 		this.getStatepensionTextbox01().enterTextField("674.40");
 		genericMethodsCvp.implicitWait(5000);
-		this.getStatepensionTextbox01().enterTextField("674.40");
-		genericMethodsCvp.implicitWait(5000);
+//		this.getStatepensionTextbox01().enterTextField("674.40");
+//		genericMethodsCvp.implicitWait(5000);
 		this.getStatepensionweekly01().selectFromDropdownByIndex(3);
 		genericMethodsCvp.implicitWait(10000);
 		this.getPrivatePensionAdd();
@@ -740,13 +691,12 @@ public class YourIncomePage<RemovePrivatePension2> extends Control {
 	public void enterDataFor89939() throws InterruptedException {
 		genericMethodsCvp.implicitWait(3000);
 		getBrowser().scrollDown();
-		genericMethodsCvp.waitForAnObjectToBeVisible(By.xpath("//div[text()='Local Housing Allowance/Housing Benefit']//following::input[2]"),5000);
+		genericMethodsCvp.waitForAnObjectToBeVisible(By.xpath("//div[text()='Local Housing Allowance/Housing Benefit']//following::input[2]"),100000);
 		getHousingBenfitTextbox().enterText("400");
 		genericMethodsCvp.implicitWait(3000);
 //		getHousingBenfitDropdown().selectFromDropdownByText("monthly");
 		getHousingBenfitDropdown().selectFromDropdownByIndex(4);
 		genericMethodsCvp.implicitWait(3000);
-
 		getstudentLoan().enterText("1200");
 		genericMethodsCvp.implicitWait(3000);
 		getstudentLoanDropdown().selectFromDropdownByIndex(1);
@@ -760,7 +710,7 @@ public class YourIncomePage<RemovePrivatePension2> extends Control {
 		getstudentGrantBursaryRemoveButton().click();
 		getBrowser().sleep(5000);
 		genericMethodsCvp.implicitWait(3000);
-//		genericMethodsCvp.waitForAnObjectToBeClickable(By.xpath("//*[@name='$PpyWorkPage$pGenericFlag$gIncomeComplete']/../label"),9000);
+		genericMethodsCvp.waitForAnObjectToBeClickable(By.xpath("//*[@name='$PpyWorkPage$pGenericFlag$gIncomeComplete']/../label"),9000);
 		genericMethodsCvp.scrollIntoViewElement(By.xpath("//*[@name='$PpyWorkPage$pGenericFlag$gIncomeComplete']/../label"));
 		getDriver().findElement(By.xpath("//*[@name='$PpyWorkPage$pGenericFlag$gIncomeComplete']/../label")).click();
 		genericMethodsCvp.implicitWait(3000);
@@ -914,52 +864,22 @@ public class YourIncomePage<RemovePrivatePension2> extends Control {
 	public Dropdown getUniversalCreditFrequency(int index) { return new Dropdown
 			(By.name("$PD_IncomeItemList_pa125419707853990pz$ppxResults$l" + index + "$pFrequency")); }
 
-	public void YourIncomePageActionSC89949() throws InterruptedException {
-		genericMethodsCvp.implicitWait(4000);
-		this.switchToActiveFrame();
-		genericMethodsCvp.implicitWait(4000);
-//		this.getRemoveStatePension().click();
-//		genericMethodsCvp.implicitWait(4000);
-//		this.getRemovePrivatePension1().click();
-//		genericMethodsCvp.implicitWait(4000);
-//		this.getRemoveWorkPension2().click();
-//		genericMethodsCvp.implicitWait(4000);
-//		this.getRemovePensionCredit89949().click();
-//		genericMethodsCvp.implicitWait(4000);
+	public void YourIncomePageActionSC89949() {
 
-
-
-
-//		this.getStudentLoan().click();
-		this.getRemoveStudentgrant1().click();
-		genericMethodsCvp.implicitWait(4000);
-		Thread.sleep(5000);
-		this.getRemoveStudentgrant2().click();
-		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(2000);
 		this.getStudentloans1().enterText("2000");
-		genericMethodsCvp.implicitWait(4000);
-		this.getStudentloans1Dropdown1().selectFromDropdownByIndex(1);
-//		genericMethodsCvp.selectByIndex(Studentloans1Dropdown1, 1);
-		genericMethodsCvp.implicitWait(4000);
-//		this.getOwnerClient1().selectFromDropdownByIndex(1);
-
-
-//		this.getStudentLoan().click();
-//		genericMethodsCvp.implicitWait(4000);
+		genericMethodsCvp.implicitWait(1000);
+		genericMethodsCvp.selectByIndex(Studentloans1Dropdown1, 1);
+		genericMethodsCvp.implicitWait(3000);
 		this.getStudentloans2().enterText("2600");
-		genericMethodsCvp.implicitWait(4000);
-		this.getStudentloans1Dropdown2().selectFromDropdownByIndex(1);
-//		genericMethodsCvp.selectByIndex(Studentloans1Dropdown2, 1);
-		genericMethodsCvp.implicitWait(4000);
-//		this.getOwnerClient2().selectFromDropdownByIndex(2);
+		genericMethodsCvp.implicitWait(2000);
+		genericMethodsCvp.selectByIndex(Studentloans1Dropdown2, 1);
+		genericMethodsCvp.implicitWait(3000);
 
-
-//		this.getStudentgrant1button().click();
-//		getBrowser().sleep(getBrowser().getTimeout());
-//		this.getStudentgrant1button().click();
-
-
-		genericMethodsCvp.implicitWait(5000);
+		this.getStudentgrant1button().click();
+		getBrowser().sleep(getBrowser().getTimeout());
+		this.getStudentgrant1button().click();
+		genericMethodsCvp.implicitWait(2000);
 		this.getAllIncome().click();
 		genericMethodsCvp.implicitWait(4000);
 		this.getContinueYourIncomeButton().click();

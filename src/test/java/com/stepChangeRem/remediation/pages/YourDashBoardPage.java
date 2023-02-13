@@ -36,8 +36,6 @@ public class YourDashBoardPage extends Control {
 	private Button AfterThreeDotOptionNonProceedCase;
 	private Button YourIncomeJointMPA;
 
-	private Button ContinueButtonYourBudgetPage;
-
 	//Getters
 
 	public Button getUndesrStandYourSituation() {
@@ -45,8 +43,6 @@ public class YourDashBoardPage extends Control {
 		return undesrStandYourSituation=new Button(By.xpath("(//div[.='Understand your situation'])[1]"));
 	}
 
-
-	public Button getContinueButtonYourBudgetPage() { return ContinueButtonYourBudgetPage;}
 	public By getAboutYouButton() { return AboutYouButton; }
 	public Button getYourHouseholdButton() { return YourHouseholdButton;}
 	public By getYourDebtsButton() { return YourDebtsButton; }
@@ -55,7 +51,7 @@ public class YourDashBoardPage extends Control {
 	public By getYourSpendingButton() { return YourSpendingButton;}
 	public By getAdviceOnYourBudgetButton() {return AdviceOnYourBudgetButton;}
 	public By getFinalQuestionsButton() {return FinalQuestionsButton;}
-	public By getYourPriorityPaymentsButton() {return YourPriorityPaymentsButton;}
+	public By 	getYourPriorityPaymentsButton() {return YourPriorityPaymentsButton;}
 	public By getReviewYourOptionsButton() {return ReviewYourOptionsButton;}
 	public By getYourChoosenSolutionButton() {return YourChoosenSolutionButton;}
 	public Div getaboutYouLocked() {return aboutYouLocked;	}
@@ -64,7 +60,7 @@ public class YourDashBoardPage extends Control {
 	public Div getSummaryYourMonthlySpendingvalue() {return SummaryYourMonthlySpendingvalue;}
 	public Div getSummaryAvailableForDebtsvalue() {return SummaryAvailableForDebtsvalue;}
 	public Button getUnderstandYourSituationMakeChangesButton() {return UnderstandYourSituationMakeChangesButton;}
-	public Button getCreateYourBudgetMakeChangesButton() {return CreateYourBudgetMakeChangesButton ;}
+	public Button 	getCreateYourBudgetMakeChangesButton() {return CreateYourBudgetMakeChangesButton ;}
 	public Button getYourDebtAdviceMakeChangesButton( ) {return YourDebtAdviceMakeChangesButton;}
 	public TextField getDashboardCommentsTextarea() {return DashboardCommentsTextarea;}
 	public Button getDashboardPostButton() {return DashboardPostButton;}
@@ -86,25 +82,24 @@ public class YourDashBoardPage extends Control {
 	public Button getYourDebtsLink(){return new Button(By.xpath("(//div[text()='Your debts'])[2]"));}
 	public Button getYourSpendigsLink(){
 		switchToActiveFrame();
-		return new Button(By.xpath("(//div[text()='Your spending'])[4]"));}
+		return new Button(By.xpath("(//div[text()='Your spending'])[2]"));}
 	public Button getYourIncomeJointMPA(){return YourIncomeJointMPA; }
 	//Constructors
 	public YourDashBoardPage() {
 
-		ContinueButtonYourBudgetPage=new Button(By.xpath("//button[text()='Continue']"));
 		AboutYouButton = By.xpath("(//div[text()='About you'])[4]");
 		YourHouseholdButton = new Button(By.xpath("(//div[text()='Your household'])[1]"));
 		YourDebtsButton = By.xpath("(//div[text()='Your debts'])[1]");
-		YourDebtsJointMPA = new Button(By.xpath("(//div[text()='Your debts'])[1]"));
-		YourIncomeJointMPA = new Button(By.xpath("(//div[contains(text()='Your income')])[4]"));
+		YourDebtsJointMPA = new Button(By.xpath("(//div[contains(text(),'Your debts')])[1]"));
+		YourIncomeJointMPA = new Button(By.xpath("(//div[contains(text(),'Your income')])[2]"));
 		CreatingYourBudgetButton = By.xpath("(//div[contains(text(),'Creating your budget')])[2]");
 		YourIncomeButton = By.xpath("(//div[contains(text(),'Your income')])[2]");
 		YourSpendingButton = By.xpath("(//div[contains(text(),'Your spending')])[2]");
-		AdviceOnYourBudgetButton = By.xpath("(//div[text()='Advice on your budget'])[2]");
-		FinalQuestionsButton = By.xpath("(//div[text()='Final questions'])[2]");
-		YourPriorityPaymentsButton = By.xpath("(//div[text()='Your priority payments'])[2]");
-		ReviewYourOptionsButton = By.xpath("(//div[text()='Review your options'])[2]");
-		YourChoosenSolutionButton = By.xpath("(//div[contains(text(),'Your chosen')])[4]");
+		AdviceOnYourBudgetButton = By.xpath("(//div[contains(text(),'Advice on your budget')])[2]");
+		FinalQuestionsButton = By.xpath("(//div[contains(text(),'Final')])[2]");
+		YourPriorityPaymentsButton = By.xpath("(//div[contains(text(),'Your priority')])[2]");
+		ReviewYourOptionsButton = By.xpath("(//div[contains(text(),'Review')])[2]");
+		YourChoosenSolutionButton = By.xpath("(//div[contains(text(),'Your chosen')])[2]");
 		aboutYouLocked = new Div(By.xpath("(//i[@alt='Locked'])[4]"));
 		SummaryYourDebtsValue = new Div(By.xpath("(//span[@data-test-id='20171109145857045611457'])[1]"));
 		SummaryYourMonthlyIncomeValue = new Div(By.xpath("(//span[@data-test-id='20171109145857045611457'])[2]"));
@@ -147,12 +142,12 @@ public class YourDashBoardPage extends Control {
 		getBrowser().scrollDown();
 		GenericMethods_cvp.implicitWait(6000);
 		GenericMethods_cvp.getContinueButton().click();
-		GenericMethods_cvp.implicitWait(5000);
-		switchToActiveFrame();
-		GenericMethods_cvp.implicitWait(2000);
-		getBrowser().scrollDown();
-		GenericMethods_cvp.getContinueButton().click();
-		GenericMethods_cvp.implicitWait(28000);
+//		GenericMethods_cvp.implicitWait(5000);
+//		switchToActiveFrame();
+//		GenericMethods_cvp.implicitWait(2000);
+//		getBrowser().scrollDown();
+//		GenericMethods_cvp.getContinueButton().click();
+//		GenericMethods_cvp.implicitWait(28000);
 
 
 	}
@@ -162,7 +157,7 @@ public class YourDashBoardPage extends Control {
 		switchToActiveFrame();
 		getBrowser().sleep(getBrowser().getTimeout()/10);
 		this.getYourDebtsJointMPA().click();
-		GenericMethods_cvp.implicitWait(5000);
+		GenericMethods_cvp.implicitWait(3000);
 	}
 	public void NavigateToYourIncomepageJointMPA()
 	{
@@ -217,23 +212,11 @@ public class YourDashBoardPage extends Control {
 
 	public void ClickOnYourSpendingButton_89939() {
 
-		GenericMethods_cvp.implicitWait(5000);
+
+		GenericMethods_cvp.implicitWait(3000);
 		switchToActiveFrame();
-		GenericMethods_cvp.implicitWait(5000);
-//		GenericMethods_cvp.verifyOverLayDisplayed();
-		GenericMethods_cvp.clickOnElementJse(this.getYourSpendingButton());
-		GenericMethods_cvp.implicitWait(5000);
-
-
-		//		GenericMethods_cvp.implicitWait(5000);
-//		switchToActiveFrame();
-//		GenericMethods_cvp.implicitWait(5000);
-//		getDriver().findElement(By.xpath("(//div[text()='Your spending'])[4]")).click();
-
-//		GenericMethods_cvp.implicitWait(5000);
-//		switchToActiveFrame();
-//		GenericMethods_cvp.implicitWait(5000);
-//		GenericMethods_cvp.clickOnElementJse(By.xpath("(//div[text()='Your spending'])[4]"));
+		GenericMethods_cvp.implicitWait(1000);
+		GenericMethods_cvp.clickOnElementJse(By.xpath("(//div[text()='Your spending'])[4]"));
 	}
 	
 	public void ClickOnAdviceOnYourBudgetButton() {
@@ -288,7 +271,7 @@ public class YourDashBoardPage extends Control {
 	}
 
 	public void checkBoxForAllCaptured() {
-		GenericMethods_cvp.implicitWait(6000);
+		GenericMethods_cvp.implicitWait(10000);
 		new Checkbox(By.xpath("//input[@name='$PpyWorkPage$pGenericFlag$gCICInputComplete']/../label")).click();
 	}
 
