@@ -167,7 +167,7 @@ import org.openqa.selenium.WebDriver;
 		}
 
 		@When("^Log on as a verifier search and open the case$")
-		public void log_on_as_a_verifier_search_and_open_the_case() throws InterruptedException {
+		public void log_on_as_a_verifier_search_and_open_the_case() {
 			homePageObj.clickPhoneCallOptionFromhomePage();
 			clientSearchPage.verifyTheSoleClientCase();
 
@@ -199,6 +199,10 @@ import org.openqa.selenium.WebDriver;
 		public void navigateToThePriorityArrearsAndContinueToNextScreens() {
 			yourDashBordPageObj.ClickOnYourPriorityPaymentsButton();
 			OurAdvicePrinciplespage.getContinueButton().click();
+			yourPriorityPaymentsArrearsPage.ConsiderYesAndContinue();
+
+
+
 		}
 
 		@And("User Navigates to Review Your Options Page and Selects the MAP as the recommended solution")

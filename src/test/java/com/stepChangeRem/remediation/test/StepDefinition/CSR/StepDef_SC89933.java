@@ -25,8 +25,6 @@ public class StepDef_SC89933 extends CucumberGenericTest{
 	public GenericMethodsRemediation genericMethods;
 	public LogWriter writer = new LogWriter();
 	public String featurefile="";
-
-	GenericMethodsRemediation GenericMethods_cvp = new GenericMethodsRemediation();
 	
 	AccountRegistration accountRegistrationPage;
 	ClientSearchPage clientSearchPage;
@@ -140,46 +138,35 @@ public class StepDef_SC89933 extends CucumberGenericTest{
 	     
 	}
 
-//	@And("^Click On New Button$")
-//	public void click_On_New_Button() throws InterruptedException, AWTException {
-//		Thread.sleep(5000);
-////	/*	for(int i=0; i<2; i++){
-////			Robot robot = new Robot();
-////			robot.keyPress(KeyEvent.VK_CONTROL);
-////			robot.keyPress(KeyEvent.VK_MINUS);
-////			robot.keyRelease(KeyEvent.VK_CONTROL);
-////			robot.keyRelease(KeyEvent.VK_MINUS);
-////		}*/
-////		GenericMethods_cvp.implicitWait(4000);
-//		homePageObj.clickNewButton();
-////
-//	}
-	@And("^Click On New Button$")
-	public void click_On_New_Button() throws InterruptedException {
-
-//		GenericMethods_cvp.implicitWait(5000);
-		Thread.sleep(4000);
+	@When("^Click On New Button$")
+	public void click_On_New_Button() throws InterruptedException, AWTException {
+		Thread.sleep(5000);
+	/*	for(int i=0; i<2; i++){
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_MINUS);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyRelease(KeyEvent.VK_MINUS);
+		}*/
 		homePageObj.clickNewButton();
 
 	}
 
 	@When("^Select PhoneCall Option$")
 	public void select_PhoneCall_Option() {
-//		GenericMethods_cvp.implicitWait(5000);
 		homePageObj.selectphoneCall();
 	    
 	}
 
 	@When("^Create new debt Advice case$")
 	public void create_new_debt_Advice_case() throws InterruptedException {
-		Thread.sleep(8000);
 		clientSearchPage.createNewDebtAdviceCase();
+	    
 	}
 
 	@When("^Select Referral Route as ERR$")
 	public void select_Referral_Route_as_ERR()   {
 		captureReferalObj.ClickReferralRouteErrMethod();
-
 		
 	}
 
@@ -243,13 +230,13 @@ public class StepDef_SC89933 extends CucumberGenericTest{
 		finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();//11
 	}
 
-	@Then("User Navigates to Final Questions Page")
-	public void userNavigatesToFinalQuestionsPage() {
+	@Then("User Naigates to Final Questions Page")
+	public void userNaigatesToFinalQuestionsPage() {
 		yourDashBordPageObj.ClickOnFinalQuestionstButton();
 	}
 
 	@Then("User Navigates to Asset Page And performs the below Opertations")
-	public void userNavigatesToAssetPageAndPerformsTheBelowOpertations(DataTable values) throws InterruptedException {
+	public void userNavigatesToAssetPageAndPerformsTheBelowOpertations(DataTable values) {
 		List<AssetsFields> assetsFields = values.asList(AssetsFields.class);
 		assetPageHelper.fillAssetDetails(assetsFields);
 	}
@@ -258,24 +245,11 @@ public class StepDef_SC89933 extends CucumberGenericTest{
 	public void userNavigatesToReviewYourOptionsPageDMPAsRecommendedSolution() {
 		yourDashBordPageObj.ClickOnReviewYourOptionsButton();
 		OurAdvicePrinciplespage.getContinueButton().click();
-		ReviewYourOptionObj.getDMPCheckBox().click();
 		ReviewYourOptionObj.getDroFindOut().click();
 		ReviewYourOptionObj.getReturnToDebtSolutionsBtn().click();
+		ReviewYourOptionObj.getDMPCheckBox().click();
 		ReviewYourOptionObj.clickOnContinueButtonYourRecommondedSolutionButton();
 	}
-
-	@And("User Navigates to Review Your Options Page as recommended Solution")
-	public void userNavigatesToReviewYourOptionsPageDMPAsRecommendedSolution89930() {
-		yourDashBordPageObj.ClickOnReviewYourOptionsButton();
-		OurAdvicePrinciplespage.getContinueButton().click();
-		ReviewYourOptionObj.getPaymentSuspensionCheckBox89930().click();
-		ReviewYourOptionObj.getFindOut89930().click();
-		ReviewYourOptionObj.getReturnToDebtSolutionsBtn().click();
-		ReviewYourOptionObj.clickOnContinueButtonYourRecommondedSolutionButton();
-	}
-
-
-
 	@And("^User Navigates to Review Your Options Page89933$")
 	public void userNavigatesToReviewYourOptionsPage89933() {
 		yourDashBordPageObj.ClickOnReviewYourOptionsButton();

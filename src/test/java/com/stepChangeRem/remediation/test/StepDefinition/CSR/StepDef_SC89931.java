@@ -159,7 +159,7 @@ public class StepDef_SC89931 extends CucumberGenericTest{
 	}
 
         @Then("User Navigates to Asset Page And add Asset")
-        public void userNavigatesToAssetPageAndAddAsset(DataTable values) throws InterruptedException {
+        public void userNavigatesToAssetPageAndAddAsset(DataTable values) {
 			List<AssetsFields> assetsFields = new ArrayList<AssetsFields>(values.asList(AssetsFields.class));
 			asset.fillAssetDetails(assetsFields);
 

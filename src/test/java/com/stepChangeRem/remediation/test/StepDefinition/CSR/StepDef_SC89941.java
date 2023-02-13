@@ -122,10 +122,11 @@ public class StepDef_SC89941 extends CucumberGenericTest{
 
 		@And("^Navigate to the Spending Fixed Costs page and enter the data as JointMPA$")
 		public void Navigate_to_the_Spending_Fixed_Costs_page_and_enter_the_data_as_JointMPA()
-		{
+		{   getBrowser().sleep(5000);
 			yourDebtPageObj.navigateToDashBoardpage();
 			yourDashBordPageObj.NavigateToSpendingFixedAsJointMPA();
-		//	yourDashBordPageObj.ClickOnYourSpendingButton();
+			yourDebtPageObj.navigateToDashBoardpage();
+			yourDashBordPageObj.ClickOnYourSpendingButton();
 			yourSpendingFixedPage.EnterdetailsofJointMPA();
 			yourDebtPageObj.navigateToDashBoardpage();
 

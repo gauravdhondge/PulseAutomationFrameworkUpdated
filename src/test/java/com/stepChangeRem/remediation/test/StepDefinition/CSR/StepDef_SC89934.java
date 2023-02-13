@@ -145,22 +145,23 @@ import org.openqa.selenium.WebDriver;
 	public void add_no_Assets_or_Future_Changes()  {
 		yourDashBordPageObj.ClickOnFinalQuestionstButton();
 		finalQuestionPage.FinalQuestionsFillAsset89934();
-		getBrowser().sleep(getBrowser().getTimeout() / 10);
 		finalQuestionFutureChange.ClickFutureChangesPageContinueButton89941();
-//		finalQuestionFutureChange.getAllChangeshavebeenCapturedCheckBox().click();
+	//finalQuestionFutureChange.getAllChangeshavebeenCapturedCheckBox().click();
 //		finalQuestionFutureChange.ClickFutureChangesPageContinueButton();
 	}
 
 	@When("^Navigate to the'Final Questions' and select <No> for all questions$")
 	public void navigate_to_the_Final_Questions_and_select_No_for_all_questions()  {
 		finalQuestionMainPage.ClickWhatTypesofJobsCouldbeAffectedNoButton();
+		finalQuestionMainPage.ClickWhatisaDebtReliefSolutionNoButton();
 		finalQuestionMainPage.ClickWhatisaDebtSolutionNoButton();
+
 		finalQuestionMainPage.ClickFinalQuestionsPageContinueButton();
 	}
 
 	@When("^Navigate to Priority Arrears and select 'Calculate' where required$")
 	public void navigate_to_Priority_Arrears_and_select_Calculate_where_required()  {
-		yourDashBordPageObj.ClickOnYourPriorityPaymentsButton();
+		//yourDashBordPageObj.ClickOnYourPriorityPaymentsButton();
 		yourPriorityPaymentsArrearsPage.ClickArrangementsforPriorityArrearsPageContinueButton();
 	}
 
@@ -172,7 +173,7 @@ import org.openqa.selenium.WebDriver;
 
 	@When("^Navigate to 'Your debt advice'$")
 	public void navigate_to_Your_debt_advice()  {
-		yourDashBordPageObj.ClickOnReviewYourOptionsButton();
+		//yourDashBordPageObj.ClickOnReviewYourOptionsButton();
 	//	OurAdvicePrinciplespage.ClickOnOurAdvicePronciplesPageContinueButton();
 		OurAdvicePrinciplespage.ClickOnOurAdvicePrinciplesPageContinueButton();
 	    
@@ -183,9 +184,8 @@ import org.openqa.selenium.WebDriver;
 		//ReviewYourOptionObj.
 		// need to verify that----ReviewYourOptionObj.VerifyFinalScenarioPlan89934();
 		ReviewYourOptionObj.selectIVASolution89934();
-//		yourDashBordPageObj.ClickOnYourChoosenSolutionButton();
-//		yourChoosenSolutionActiveSession.ClickOnDownloadPersonalActionPlanButton();;
-//		yourChoosenSolutionActiveSession.ClickOnYourAdviceSessionIsCompletePageSaveAndExitButton();
+		yourDashBordPageObj.ClickOnYourChoosenSolutionButton();
+	   yourChoosenSolutionActiveSession.ClickOnDownloadPersonalActionPlanButton();;
 		//Logout from here
 
 	}
